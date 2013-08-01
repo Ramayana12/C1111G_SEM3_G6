@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Admin\AccountCreate.aspx" />
     <Content Include="Admin\AccountManagement.aspx" />
+    <Content Include="Admin\AccountUpdateProfile.aspx" />
     <Content Include="Admin\BranchManagement.aspx" />
     <Content Include="Admin\BranchUpdate.aspx" />
     <Content Include="Admin\HomeAdmin.aspx" />
@@ -212,6 +213,13 @@
     </Compile>
     <Compile Include="Admin\AccountManagement.aspx.designer.cs">
       <DependentUpon>AccountManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AccountUpdateProfile.aspx.cs">
+      <DependentUpon>AccountUpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountUpdateProfile.aspx.designer.cs">
+      <DependentUpon>AccountUpdateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\BranchManagement.aspx.cs">
       <DependentUpon>BranchManagement.aspx</DependentUpon>

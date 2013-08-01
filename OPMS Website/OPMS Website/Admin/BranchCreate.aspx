@@ -40,6 +40,8 @@
                 <asp:TextBox ID="txtBranchEmail" runat="server" Width="213px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvBranchEmail" runat="server" ControlToValidate="txtBranchEmail"
                     ErrorMessage=" Branch Email is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtBranchEmail"
+                    ErrorMessage="Email Invalid!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red">(*)</asp:RegularExpressionValidator>
                 &nbsp; 
                 &nbsp;<br />
                 &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />

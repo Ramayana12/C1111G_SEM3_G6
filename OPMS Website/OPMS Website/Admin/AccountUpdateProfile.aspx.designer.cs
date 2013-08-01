@@ -10,7 +10,7 @@
 namespace OPMS_Website.Admin {
     
     
-    public partial class BranchUpdate {
+    public partial class AccountUpdateProfile {
         
         /// <summary>
         /// ulMenu control.
@@ -22,85 +22,112 @@ namespace OPMS_Website.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulMenu;
         
         /// <summary>
-        /// lblBranchName control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBranchName;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// txtBranchName control.
+        /// txtFullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBranchName;
+        protected global::System.Web.UI.WebControls.TextBox txtFullName;
         
         /// <summary>
-        /// rfvBranchName control.
+        /// rfvFullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBranchName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFullName;
         
         /// <summary>
-        /// lblCheckBranchName control.
+        /// imgPicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCheckBranchName;
+        protected global::System.Web.UI.WebControls.Image imgPicture;
         
         /// <summary>
-        /// lblBranchEmail control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBranchEmail;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// txtBranchEmail control.
+        /// fuPicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBranchEmail;
+        protected global::System.Web.UI.WebControls.FileUpload fuPicture;
         
         /// <summary>
-        /// rfvBranchEmail control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBranchEmail;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// txtBirthDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.TextBox txtBirthDate;
         
         /// <summary>
-        /// lblPhone control.
+        /// rfvBirthDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBirthDate;
+        
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// lblCheckBirthDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCheckBirthDate;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// txtPhone control.
@@ -121,13 +148,58 @@ namespace OPMS_Website.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhone;
         
         /// <summary>
-        /// _lblAddress control.
+        /// Label11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label _lblAddress;
+        protected global::System.Web.UI.WebControls.Label Label11;
+        
+        /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// rfvEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
+        /// lblCheckEmaiExist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCheckEmaiExist;
+        
+        /// <summary>
+        /// Label12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
         /// txtAddress control.
@@ -139,22 +211,13 @@ namespace OPMS_Website.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
         
         /// <summary>
-        /// rfvAddress control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAddress;
-        
-        /// <summary>
-        /// lblDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// txtDescription control.
@@ -184,21 +247,21 @@ namespace OPMS_Website.Admin {
         protected global::System.Web.UI.WebControls.Label lblStatusUpdate;
         
         /// <summary>
-        /// btnUpdate control.
+        /// btnApplyChange control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Button btnApplyChange;
         
         /// <summary>
-        /// btnCancel control.
+        /// btnClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button btnClose;
     }
 }
