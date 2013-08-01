@@ -1,0 +1,100 @@
+/* CSS Document */
+body
+{
+	background:url(images/main-bg.gif) 0 0 repeat-x #A8A39D; 
+	color:#1A1917; 
+	margin:84px 0 0; 
+	padding:0; 
+	font:14px/20px Arial, Helvetica, sans-serif;
+}
+#topPan h1
+{
+	display:block;
+	width:464px;
+	height:198px;
+	background:url(images/header.jpg) 0 0 no-repeat;
+	text-indent:-2000px;
+	margin:0;
+	clear:both;
+}
+/*--BODY PANEL--*/
+#bodyPan
+{
+	width:352px; 
+	background:url(images/bodytopbg.jpg) 0 0 no-repeat #fff; 
+	color:#1A1917; 
+	position:relative; 
+	margin:0 auto; 
+	padding:0 56px;}
+#bodyPan h1
+{
+	width:352px; 
+	height:32px; 
+	display:block; 
+	background:url(images/welcomebg.gif) 0 100% repeat-x; 
+	font:28px/26px Georgia, "Times New Roman", Times, serif; 
+	padding:42px 0 0;}
+#bodyPan h1 span
+{
+	background:#F9F9F9; 
+	color:#9A0000; 
+	font-size:26px;}
+#bodyPan h2
+{
+	width:350px; 
+	height:32px; 
+	display:block; 
+	background:url(images/dotline.gif) 0 100% repeat-x #fff; 
+	font:28px/26px Georgia, "Times New Roman", Times, serif; 
+	padding:42px 0 0; 
+	color:#9A0000;
+}
+
+#bodybottomPan
+{
+	width:464px; 
+	height:42px; 
+	background:url(images/bodybottombg.jpg) 0 0 no-repeat; 
+	position:relative; 
+	margin:0 auto; clear:both; }
+
+
+#bodyPan form
+{
+	width:350px; 
+	height:162px; 
+	background:url(images/formarea.jpg) 0 100% no-repeat; 
+	padding:0px; margin:30px 0 0;
+	}
+#bodyPan form h2
+{
+	display:block; 
+	width:310px; 
+	height:45px; 
+	background:url(images/formtop.gif) 0 0 no-repeat #F9F9F9; 
+	color:#fff; 
+	font:20px/39px Georgia, "Times New Roman", Times, serif; 
+	margin:0; 
+	padding:0 0 0 40px;}
+#bodyPan form input
+{
+	width:165px; 
+	height:17px; 
+	margin:0 0 10px 130px;}
+#bodyPan form input.paddingtop
+{
+	margin-top:12px;}
+	
+#bodyPan form input.button
+{
+	width:70px; 
+	height:25px; 	
+	margin:0 0 0px 0px;}
+
+#bodyPan form input.linkbutton
+{
+	width:70px; 
+	height:25px; 
+	margin:0 0 0px 30px;}
+
+

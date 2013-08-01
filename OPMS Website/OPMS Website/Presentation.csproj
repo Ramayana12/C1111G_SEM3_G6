@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8924DE09-70B1-4FDC-98AB-78D7500EBB46}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OPMS_Website</RootNamespace>
+    <AssemblyName>OPMS Website</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AccountCreate.aspx" />
+    <Content Include="Admin\AccountManagement.aspx" />
+    <Content Include="Admin\BranchManagement.aspx" />
+    <Content Include="Admin\BranchUpdate.aspx" />
+    <Content Include="Admin\HomeAdmin.aspx" />
+    <Content Include="Admin\BranchCreate.aspx" />
+    <Content Include="Admin\css\Copy of theme.css" />
+    <Content Include="Admin\css\CSS\images\arrow.jpg" />
+    <Content Include="Admin\css\CSS\images\blog-hover.jpg" />
+    <Content Include="Admin\css\CSS\images\blog-normal.jpg" />
+    <Content Include="Admin\css\CSS\images\bodybottombg.jpg" />
+    <Content Include="Admin\css\CSS\images\bodytopbg.jpg" />
+    <Content Include="Admin\css\CSS\images\button.gif" />
+    <Content Include="Admin\css\CSS\images\chat-hover.jpg" />
+    <Content Include="Admin\css\CSS\images\chat-normal.jpg" />
+    <Content Include="Admin\css\CSS\images\dotline.gif" />
+    <Content Include="Admin\css\CSS\images\footerbg.gif" />
+    <Content Include="Admin\css\CSS\images\formarea.jpg" />
+    <Content Include="Admin\css\CSS\images\formtop.gif" />
+    <Content Include="Admin\css\CSS\images\header.jpg" />
+    <Content Include="Admin\css\CSS\images\main-bg.gif" />
+    <Content Include="Admin\css\CSS\images\menubg-hover.gif" />
+    <Content Include="Admin\css\CSS\images\menubg-normal.gif" />
+    <Content Include="Admin\css\CSS\images\more1.jpg" />
+    <Content Include="Admin\css\CSS\images\more2.jpg" />
+    <Content Include="Admin\css\CSS\images\tools-hover.jpg" />
+    <Content Include="Admin\css\CSS\images\tools-normal.jpg" />
+    <Content Include="Admin\css\CSS\images\vertical-dot.gif" />
+    <Content Include="Admin\css\CSS\images\welcomebg.gif" />
+    <Content Include="Admin\css\CSS\style.css" />
+    <Content Include="Admin\css\CSS\stylesheets\images\blank.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\comment.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\content.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\delete.png" />
+    <Content Include="Admin\css\CSS\stylesheets\images\footer.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\form_bg_TextArea.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\go.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\header.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\headerbg.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderChrome.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderChromeBlack.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderGamer.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderGamer_Hover.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderGamer_left.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderGlassBlack.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderSoftGrey.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\HeaderWhiteChrome.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\loading.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\menu-bg.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\menu.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\page.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\images\PagerGamer.jpg" />
+    <Content Include="Admin\css\CSS\stylesheets\images\search.png" />
+    <Content Include="Admin\css\CSS\stylesheets\images\square-green.png" />
+    <Content Include="Admin\css\CSS\stylesheets\images\update.png" />
+    <Content Include="Admin\css\CSS\stylesheets\images\YahooSprite.gif" />
+    <Content Include="Admin\css\CSS\stylesheets\interface.css" />
+    <Content Include="Admin\css\CSS\stylesheets\WhiteChromeGridView.css" />
+    <Content Include="Admin\css\ie-sucks.css" />
+    <Content Include="Admin\css\iepngfix.htc" />
+    <Content Include="Admin\css\style.css" />
+    <Content Include="Admin\css\switch.css" />
+    <Content Include="Admin\css\theme.css" />
+    <Content Include="Admin\css\theme1.css" />
+    <Content Include="Admin\css\theme2.css" />
+    <Content Include="Admin\css\theme3.css" />
+    <Content Include="Admin\css\theme4.css" />
+    <Content Include="Admin\imageEmployees\anonymous.png" />
+    <Content Include="Admin\img\bg.jpg" />
+    <Content Include="Admin\img\bg_blue.jpg" />
+    <Content Include="Admin\img\bg_brown.jpg" />
+    <Content Include="Admin\img\bg_light_green.jpg" />
+    <Content Include="Admin\img\bg_menu_blue.jpg" />
+    <Content Include="Admin\img\bg_menu_green.jpg" />
+    <Content Include="Admin\img\bg_menu_mix.jpg" />
+    <Content Include="Admin\img\bg_menu_red.jpg" />
+    <Content Include="Admin\img\bg_mix.jpg" />
+    <Content Include="Admin\img\form_blue.gif" />
+    <Content Include="Admin\img\form_brown.gif" />
+    <Content Include="Admin\img\form_green.gif" />
+    <Content Include="Admin\img\form_mix.gif" />
+    <Content Include="Admin\img\form_red.gif" />
+    <Content Include="Admin\img\graph.jpg" />
+    <Content Include="Admin\img\graph2.jpg" />
+    <Content Include="Admin\img\icons\add.png" />
+    <Content Include="Admin\img\icons\application_add.png" />
+    <Content Include="Admin\img\icons\arrow_down.png" />
+    <Content Include="Admin\img\icons\arrow_down_mini.gif" />
+    <Content Include="Admin\img\icons\arrow_left.gif" />
+    <Content Include="Admin\img\icons\arrow_right.gif" />
+    <Content Include="Admin\img\icons\brick.png" />
+    <Content Include="Admin\img\icons\bricks.png" />
+    <Content Include="Admin\img\icons\bricks_gear.png" />
+    <Content Include="Admin\img\icons\brick_edit.png" />
+    <Content Include="Admin\img\icons\car.png" />
+    <Content Include="Admin\img\icons\cart.png" />
+    <Content Include="Admin\img\icons\cart_add.png" />
+    <Content Include="Admin\img\icons\city.png" />
+    <Content Include="Admin\img\icons\cog.png" />
+    <Content Include="Admin\img\icons\coins.png" />
+    <Content Include="Admin\img\icons\color_swatch.png" />
+    <Content Include="Admin\img\icons\company.png" />
+    <Content Include="Admin\img\icons\delete.png" />
+    <Content Include="Admin\img\icons\documentinfo_koffice.png" />
+    <Content Include="Admin\img\icons\expand.jpg" />
+    <Content Include="Admin\img\icons\feed.png" />
+    <Content Include="Admin\img\icons\feedback.png" />
+    <Content Include="Admin\img\icons\filenew.png" />
+    <Content Include="Admin\img\icons\folder.png" />
+    <Content Include="Admin\img\icons\folder_page.png" />
+    <Content Include="Admin\img\icons\folder_page_add.png" />
+    <Content Include="Admin\img\icons\folder_table.png" />
+    <Content Include="Admin\img\icons\group.png" />
+    <Content Include="Admin\img\icons\house.png" />
+    <Content Include="Admin\img\icons\kuser.png" />
+    <Content Include="Admin\img\icons\kwifimanager.png" />
+    <Content Include="Admin\img\icons\logout.png" />
+    <Content Include="Admin\img\icons\magnifier.png" />
+    <Content Include="Admin\img\icons\mail_reply.png" />
+    <Content Include="Admin\img\icons\newadd.png" />
+    <Content Include="Admin\img\icons\news.png" />
+    <Content Include="Admin\img\icons\page_add.png" />
+    <Content Include="Admin\img\icons\page_gear.png" />
+    <Content Include="Admin\img\icons\page_white_delete.png" />
+    <Content Include="Admin\img\icons\page_white_edit.png" />
+    <Content Include="Admin\img\icons\page_white_link.png" />
+    <Content Include="Admin\img\icons\page_white_office.png" />
+    <Content Include="Admin\img\icons\page_white_text_width.png" />
+    <Content Include="Admin\img\icons\report.png" />
+    <Content Include="Admin\img\icons\report_link.png" />
+    <Content Include="Admin\img\icons\report_user.png" />
+    <Content Include="Admin\img\icons\rss.png" />
+    <Content Include="Admin\img\icons\update.png" />
+    <Content Include="Admin\img\icons\user.png" />
+    <Content Include="Admin\img\icons\user_add.png" />
+    <Content Include="Admin\img\icons\user_delete.png" />
+    <Content Include="Admin\img\icons\user_edit.png" />
+    <Content Include="Admin\img\icons\world.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AccountCreate.aspx.cs">
+      <DependentUpon>AccountCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountCreate.aspx.designer.cs">
+      <DependentUpon>AccountCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AccountManagement.aspx.cs">
+      <DependentUpon>AccountManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountManagement.aspx.designer.cs">
+      <DependentUpon>AccountManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BranchManagement.aspx.cs">
+      <DependentUpon>BranchManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BranchManagement.aspx.designer.cs">
+      <DependentUpon>BranchManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BranchUpdate.aspx.cs">
+      <DependentUpon>BranchUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BranchUpdate.aspx.designer.cs">
+      <DependentUpon>BranchUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HomeAdmin.aspx.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomeAdmin.aspx.designer.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BranchCreate.aspx.cs">
+      <DependentUpon>BranchCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BranchCreate.aspx.designer.cs">
+      <DependentUpon>BranchCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\masterPageAdmin.Master.cs">
+      <DependentUpon>masterPageAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\masterPageAdmin.Master.designer.cs">
+      <DependentUpon>masterPageAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\css\CSS\images\Thumbs.db" />
+    <Content Include="Admin\css\CSS\stylesheets\images\Thumbs.db" />
+    <Content Include="Admin\img\icons\Thumbs.db" />
+    <Content Include="Admin\img\Thumbs.db" />
+    <Content Include="Admin\masterPageAdmin.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{08298ae5-a52b-4185-b768-2b903ed31539}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
+      <Project>{db37679b-49be-4350-908d-b06cbf911b5f}</Project>
+      <Name>DataTransferObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64297/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
