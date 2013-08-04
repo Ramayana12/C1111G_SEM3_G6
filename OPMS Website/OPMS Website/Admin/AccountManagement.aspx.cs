@@ -13,10 +13,10 @@ namespace OPMS_Website.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
+            if (Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadBranches();
@@ -73,12 +73,21 @@ namespace OPMS_Website.Admin
 
         protected void lbtnDetails_Command(object sender, CommandEventArgs e)
         {
-            Response.Redirect("AccountUpdate.aspx?AccountID=" + e.CommandArgument.ToString());
+            Response.Redirect("AccountDetails.aspx?AccountID=" + e.CommandArgument.ToString());
         }
 
         protected void gvAccountsList_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvAccountsList.PageIndex = e.NewPageIndex;
+            LoadAccounts();
+        }
+
+        protected void lbtnDeactivate_Command(object sender, CommandEventArgs e)
+        {
+            Account account = new Account();
+            account = AccountBLL.GetAccountByID(e.CommandArgument.ToString())[0];
+            account.Active = (account.Active.Equals("True")) ? "0" : "1";
+            AccountBLL.UpdateAccount(account);
             LoadAccounts();
         }
 

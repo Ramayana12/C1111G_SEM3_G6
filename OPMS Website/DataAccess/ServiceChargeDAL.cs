@@ -101,5 +101,26 @@ namespace DataAccess
         }
         #endregion
 
+        #region Check exist ServiceCharge
+        public bool ExistServiceCharge(string name)
+        {
+            using (SqlCommand cmd = GetCommand("getServiceChargeByName", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@Name", name);
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        #endregion
+
     }
 }

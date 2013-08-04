@@ -13,25 +13,25 @@ namespace OPMS_Website.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
+            if (Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadData();
+                lblStatusUpdate.Text = "";
             }
-
         }
 
         public void LoadData()
         {
             Account account = new Account();
-            //account = AccountBLL.GetAccountByID(Session["AccountID"].ToString())[0];
-            account = AccountBLL.GetAccountByID("1")[0];
+            account = AccountBLL.GetAccountByID(Session["AccountID"].ToString())[0];
             txtFullName.Text = account.FullName;
             imgPicture.ImageUrl = account.Picture;
-            txtBirthDate.Text = account.BirthDate;
+            txtBirthDate.Text = Convert.ToDateTime(account.BirthDate).ToShortDateString();
+            txtEmail.Text = account.Email;
             txtPhone.Text = account.Phone;
             txtAddress.Text = account.Address;
             txtDescription.Text = account.Description;
@@ -39,7 +39,54 @@ namespace OPMS_Website.Admin
 
         protected void btnApplyChange_Click(object sender, EventArgs e)
         {
+            if (checkBirthDate() && Page.IsValid)
+            {
+                Account account = new Account();
+                account = AccountBLL.GetAccountByID(Session["AccountID"].ToString())[0];
+                account.FullName = txtFullName.Text;
+                account.BirthDate = txtBirthDate.Text;
+                account.Email = txtEmail.Text;
+                account.Phone = txtPhone.Text;
+                account.Address = txtAddress.Text;
+                account.Description = txtDescription.Text;
+                if (fuPicture.HasFile)
+                {
+                    string serverPath = Server.MapPath(".");
+                    string url = serverPath + @"\imageEmployees\" + fuPicture.FileName;
+                    fuPicture.SaveAs(url);
 
+                    account.Picture = "~/Admin/imageEmployees/" + fuPicture.FileName;
+                }
+
+                bool result = AccountBLL.UpdateAccount(account);
+                if (result)
+                {
+                    lblStatusUpdate.Text = "Update Successfull!";
+                    Response.Redirect("AccountManagement.aspx");
+                }
+                else
+                {
+                    lblStatusUpdate.Text = "Can not Update Profile!";
+                }
+            }
+        }
+
+        public bool checkBirthDate()
+        {
+            try
+            {
+                DateTime date = Convert.ToDateTime(txtBirthDate.Text);
+                lblCheckBirthDate.Text = "";
+                txtPhone.Focus();
+                return true;
+            }
+            catch (FormatException)
+            {
+                txtBirthDate.Text = "";
+                txtBirthDate.Focus();
+                lblCheckBirthDate.Text = "Birth Date Invalid Format!";
+                return false;
+            }
         }
     }
 }

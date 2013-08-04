@@ -14,7 +14,7 @@ namespace DataAccess
         #region Insert DistanceCharge
         public bool InsertDistanceCharge(DistanceCharge distanceCharge)
         {
-            using (SqlCommand cmd = GetCommand("insertServiceCharge", CommandType.StoredProcedure))
+            using (SqlCommand cmd = GetCommand("insertDistanceCharge", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@Name", distanceCharge.Name);
                 AddParameter(cmd, "@Charge", distanceCharge.Charge);
@@ -29,7 +29,7 @@ namespace DataAccess
         #region Update DistanceCharge
         public bool UpdateDistanceCharge(DistanceCharge distanceCharge)
         {
-            using (SqlCommand cmd = GetCommand("updateServiceCharge", CommandType.StoredProcedure))
+            using (SqlCommand cmd = GetCommand("updateDistanceCharge", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@ID", distanceCharge.ID);
                 AddParameter(cmd, "@Name", distanceCharge.Name);
@@ -98,6 +98,27 @@ namespace DataAccess
                 distanceCharge = null;
             }
             return list;
+        }
+        #endregion
+
+        #region Check exist DistanceCharge
+        public bool ExistDistanceCharge(string name)
+        {
+            using (SqlCommand cmd = GetCommand("getDistanceChargeByName", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@Name", name);
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
         #endregion
     }

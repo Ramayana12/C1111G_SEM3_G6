@@ -57,11 +57,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AccountChangePassword.aspx" />
+    <Content Include="Admin\AccountDetails.aspx" />
     <Content Include="Admin\AccountCreate.aspx" />
     <Content Include="Admin\AccountManagement.aspx" />
     <Content Include="Admin\AccountUpdateProfile.aspx" />
     <Content Include="Admin\BranchManagement.aspx" />
     <Content Include="Admin\BranchUpdate.aspx" />
+    <Content Include="Admin\DistanceCreate.aspx" />
+    <Content Include="Admin\DistanceManagement.aspx" />
+    <Content Include="Admin\DistanceUpdate.aspx" />
+    <Content Include="Admin\FeedBackDetails.aspx" />
+    <Content Include="Admin\FeedBackManagement.aspx" />
     <Content Include="Admin\HomeAdmin.aspx" />
     <Content Include="Admin\BranchCreate.aspx" />
     <Content Include="Admin\css\Copy of theme.css" />
@@ -196,10 +203,34 @@
     <Content Include="Admin\img\icons\user_delete.png" />
     <Content Include="Admin\img\icons\user_edit.png" />
     <Content Include="Admin\img\icons\world.png" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\NewsCreate.aspx" />
+    <Content Include="Admin\NewsManagement.aspx" />
+    <Content Include="Admin\NewsUpdate.aspx" />
+    <Content Include="Admin\ServiceManagement.aspx" />
+    <Content Include="Admin\ServiceCreate.aspx" />
+    <Content Include="Admin\ServiceUpdate.aspx" />
+    <Content Include="Admin\WeightCreate.aspx" />
+    <Content Include="Admin\WeightManagement.aspx" />
+    <Content Include="Admin\WeightUpdate.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AccountChangePassword.aspx.cs">
+      <DependentUpon>AccountChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountChangePassword.aspx.designer.cs">
+      <DependentUpon>AccountChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AccountDetails.aspx.cs">
+      <DependentUpon>AccountDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountDetails.aspx.designer.cs">
+      <DependentUpon>AccountDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AccountCreate.aspx.cs">
       <DependentUpon>AccountCreate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +266,41 @@
     <Compile Include="Admin\BranchUpdate.aspx.designer.cs">
       <DependentUpon>BranchUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\DistanceCreate.aspx.cs">
+      <DependentUpon>DistanceCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DistanceCreate.aspx.designer.cs">
+      <DependentUpon>DistanceCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DistanceManagement.aspx.cs">
+      <DependentUpon>DistanceManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DistanceManagement.aspx.designer.cs">
+      <DependentUpon>DistanceManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DistanceUpdate.aspx.cs">
+      <DependentUpon>DistanceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DistanceUpdate.aspx.designer.cs">
+      <DependentUpon>DistanceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FeedBackDetails.aspx.cs">
+      <DependentUpon>FeedBackDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeedBackDetails.aspx.designer.cs">
+      <DependentUpon>FeedBackDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FeedBackManagement.aspx.cs">
+      <DependentUpon>FeedBackManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeedBackManagement.aspx.designer.cs">
+      <DependentUpon>FeedBackManagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\HomeAdmin.aspx.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,12 +315,82 @@
     <Compile Include="Admin\BranchCreate.aspx.designer.cs">
       <DependentUpon>BranchCreate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\masterPageAdmin.Master.cs">
       <DependentUpon>masterPageAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\masterPageAdmin.Master.designer.cs">
       <DependentUpon>masterPageAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewsCreate.aspx.cs">
+      <DependentUpon>NewsCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewsCreate.aspx.designer.cs">
+      <DependentUpon>NewsCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewsManagement.aspx.cs">
+      <DependentUpon>NewsManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewsManagement.aspx.designer.cs">
+      <DependentUpon>NewsManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewsUpdate.aspx.cs">
+      <DependentUpon>NewsUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewsUpdate.aspx.designer.cs">
+      <DependentUpon>NewsUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ServiceManagement.aspx.cs">
+      <DependentUpon>ServiceManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ServiceManagement.aspx.designer.cs">
+      <DependentUpon>ServiceManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ServiceCreate.aspx.cs">
+      <DependentUpon>ServiceCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ServiceCreate.aspx.designer.cs">
+      <DependentUpon>ServiceCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ServiceUpdate.aspx.cs">
+      <DependentUpon>ServiceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ServiceUpdate.aspx.designer.cs">
+      <DependentUpon>ServiceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WeightCreate.aspx.cs">
+      <DependentUpon>WeightCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WeightCreate.aspx.designer.cs">
+      <DependentUpon>WeightCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WeightManagement.aspx.cs">
+      <DependentUpon>WeightManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WeightManagement.aspx.designer.cs">
+      <DependentUpon>WeightManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WeightUpdate.aspx.cs">
+      <DependentUpon>WeightUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WeightUpdate.aspx.designer.cs">
+      <DependentUpon>WeightUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

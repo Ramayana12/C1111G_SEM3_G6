@@ -20,10 +20,10 @@ namespace OPMS_Website.Admin
             {
                 branchID = Request.QueryString["BranchID"].ToString();
             }
-            //if (Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
+            if (Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadBranch();
@@ -64,23 +64,21 @@ namespace OPMS_Website.Admin
                     return;
                 }
             }
-
         }
         public bool checkName()
         {
-            bool ck = true;
             if (!txtBranchName.Text.ToLower().Equals(BranchBLL.GetBranchByID(branchID)[0].Name.ToLower()) && BranchBLL.ExistBranch(txtBranchName.Text))
             {
                 lblCheckBranchName.Text = "Branch Name existed !";
                 txtBranchName.Focus();
-                ck = false;
+                return false;
             }
             else
             {
                 lblCheckBranchName.Text = "";
-                ck = true;
+                txtBranchEmail.Focus();
+                return true;
             }
-            return ck;
         }
 
         protected void txtBranchName_TextChanged(object sender, EventArgs e)

@@ -68,6 +68,13 @@ namespace Business
         }
         #endregion
 
+        #region Check Login Account
+        public static List<Account> CheckLoginAccount(string userName, string password)
+        {
+            return db.CheckLoginAccount(userName, password);
+        }
+        #endregion
+
         #region Check Exist UserName
         public static bool CheckExistUserName(string userName)
         {

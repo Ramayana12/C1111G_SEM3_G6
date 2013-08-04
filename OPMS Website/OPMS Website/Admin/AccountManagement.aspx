@@ -4,11 +4,11 @@
     <%--Phan nay dung cho menu--%>
     <div id="topmenu">
         <ul>
-            <li><a href="frmHome.aspx">HOME</a></li>
-            <li ><a href="BranchManagement.aspx">BRANCHES</a></li>
+            <li><a href="HomeAdmin.aspx">HOME</a></li>
+            <li><a href="BranchManagement.aspx">BRANCHES</a></li>
             <li class="current"><a href="AccountManagement.aspx">USERS</a></li>
-            <li><a href="frmServicesManagement.aspx">MANAGEMENT</a></li>
-            <li><a href="frmNewsManagement.aspx">NEWS</a></li>
+            <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
+            <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -66,17 +66,16 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Full name">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lbtnProfileAccount" CommandArgument='<%# Eval("ID") %>'
+                                <asp:LinkButton ID="lbtnDetails" CommandArgument='<%# Eval("ID") %>'
                                     Text='<%# Eval("FullName") %>'
-                                    runat="server" ToolTip="Profile Account"></asp:LinkButton>
+                                    runat="server" ToolTip="View Details Profile Account"
+                                    OnCommand="lbtnDetails_Command"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="User Name">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lbtnViewUser"
-                                    CommandArgument='<%# Eval("ID") %>'
-                                    Text='<%# Eval("UserName") %>'
-                                    runat="server" ToolTip="View Account Details"></asp:LinkButton>
+                                <asp:Label ID="lblUserName" runat="server" Text='<%# Eval("UserName") %>'>
+                                </asp:Label>                                
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Role">
@@ -85,18 +84,25 @@
                                     Text='<%# Eval("Role") %>' Enabled="True" />
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Active">
+                            <ItemTemplate>                               
+                                <asp:CheckBox ID="cbActive" runat="server" Enabled="false" Checked='<%# Eval("Active").ToString().Equals("True") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <asp:LinkButton ID="lbtnDelete"
                                     CommandArgument='<%# Eval("ID") %>'
                                     OnClientClick="return confirm('Are you sure you want to delete this record ?')"
                                     runat="server" ToolTip="Remove  Account" CommandName="RemoveAccount"
-                                    OnCommand="lbtnDelete_Command">Remove</asp:LinkButton>&nbsp;
+                                    OnCommand="lbtnDelete_Command">Remove</asp:LinkButton>&nbsp;&nbsp;
                                     &nbsp;
-                                <asp:LinkButton ID="lbtnDetails"
-                                    CommandArgument='<%# Eval("ID") %>'
-                                    runat="server" ToolTip="View Account Details" CommandName="ViewAccountDetails"
-                                    OnCommand="lbtnDetails_Command">View Details</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnDeactivate"
+                                    CommandArgument='<%# Eval("ID") %>' runat="server"
+                                    OnClientClick="return confirm('Are you sure you want to change Status this account ?')"
+                                    ToolTip='<%# (Eval("Active").ToString().Equals("False")) ? "Active Account" : "Deactivate Account" %>'
+                                    CommandName="DeactivateAccount"
+                                    OnCommand="lbtnDeactivate_Command"><%# (Eval("Active").ToString().Equals("False")) ? "Active" : "Deactivate" %></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

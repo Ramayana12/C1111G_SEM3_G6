@@ -4,11 +4,11 @@
     <%--Phan nay dung cho menu--%>
     <div id="topmenu">
         <ul>
-            <li><a href="frmHome.aspx">HOME</a></li>
-            <li><a href="BranchesManagement.aspx">BRANCHES</a></li>
-            <li  class="current"><a href="frmAccountsManagement.aspx">USERS</a></li>
-            <li><a href="frmServicesManagement.aspx">MANAGEMENT</a></li>
-            <li><a href="frmNewsManagement.aspx">NEWS</a></li>
+            <li><a href="HomeAdmin.aspx">HOME</a></li>
+            <li><a href="BranchManagement.aspx">BRANCHES</a></li>
+            <li class="current"><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
+            <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -16,8 +16,8 @@
     <%--Phan nay dung cho menu con--%>
     <div id="panel">
         <ul id="ulMenu" runat="server">
-            <li><a href="frmAddNewAccount.aspx" class="useradd">Add user</a></li>
-            <li><a href="frmAccountsManagement.aspx" class="search">Find user</a></li>
+            <li><a href="AccountCreate.aspx" class="useradd">Add user</a></li>
+            <li><a href="AccountManagement.aspx" class="search">Find user</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -84,7 +84,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnCreate" runat="server" Text="Create" OnClick="btnCreate_Click" ToolTip="Create new account !" Width="96px" />&nbsp;
-        <asp:Button ID="btnClose" runat="server" PostBackUrl="~/Admin/frmAccountsManagement.aspx" Text="Close" CausesValidation="False" ToolTip="Close form " /><br />
+        <asp:Button ID="btnClose" runat="server" PostBackUrl="~/Admin/AccountManagement.aspx" Text="Close" CausesValidation="False" ToolTip="Close form " /><br />
         <br />
     </div>
 </asp:Content>

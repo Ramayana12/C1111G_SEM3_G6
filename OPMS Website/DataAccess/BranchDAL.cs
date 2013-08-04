@@ -154,7 +154,6 @@ namespace DataAccess
         #region Check Exist Branch
         public bool ExistBranch(string name)
         {
-            List<Branch> list = new List<Branch>();
             using (SqlCommand cmd = GetCommand("getBranchByName", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@Name", name);

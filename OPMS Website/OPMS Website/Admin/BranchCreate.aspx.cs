@@ -13,17 +13,14 @@ namespace OPMS_Website.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //    if (!IsPostBack)
-            //    {
-            //        txtBranchName.Focus();
-            //    }
-            //}
+            if (Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (!IsPostBack)
+            {
+                txtBranchName.Focus();
+            }
         }
 
         protected void btnCreateBranch_Click(object sender, EventArgs e)
@@ -44,7 +41,7 @@ namespace OPMS_Website.Admin
                 }
                 else
                 {
-                    lblStatusAddNewBranch.Text = "Can not create new branch !";
+                    lblStatusAddNewBranch.Text = "Can not create new branch!";
                     return;
                 }
             }
@@ -62,6 +59,7 @@ namespace OPMS_Website.Admin
             else
             {
                 lblCheckBranchName.Text = "";
+                txtBranchEmail.Focus();
                 ck = true;
             }
             return ck;

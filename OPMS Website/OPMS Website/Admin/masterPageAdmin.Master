@@ -42,35 +42,32 @@
                             <ul>
                                 <li>
                                     <asp:LinkButton ID="lbtUserName" CausesValidation="false" runat="server"></asp:LinkButton></li>
-                                <li><a href="frmChangePassword.aspx" class="report">Change Password</a></li>
-                                <li><a href="frmUpdateProfile.aspx" class="report">Update Profile</a></li>
+                                <li><a href="AccountChangePassword.aspx" class="report">Change Password</a></li>
+                                <li><a href="AccountUpdateProfile.aspx" class="report">Update Profile</a></li>
                                 <li>
-                                    <asp:LinkButton ID="lbtLogout" CausesValidation="false" Text="LogOut" runat="server" OnClick="lbtLogout_Click" PostBackUrl="~/Admin/frmLoginForm.aspx"></asp:LinkButton></li>
+                                    <asp:LinkButton ID="lbtLogout" CausesValidation="false" Text="LogOut" runat="server" OnClick="lbtLogout_Click" PostBackUrl="~/Admin/Login.aspx"></asp:LinkButton></li>
                             </ul>
                         </li>
                         <li>
                             <h3><a href="#" class="user">Users</a></h3>
                             <ul>
-                                <li><a href="frmAddNewAccount.aspx" class="useradd">Add user</a></li>
-                                <li><a href="frmAccountsManagement.aspx" class="search">Find user</a></li>
+                                <li><a href="AccountCreate.aspx" class="useradd">Add user</a></li>
+                                <li><a href="AccountManagement.aspx" class="search">Find user</a></li>
                             </ul>
                         </li>
                         <li>
-                            <h3><a href="#" class="manage">Management</a></h3>
-                            <ul>
-                                <li><a href="frmCompaniesManagement.aspx" class="company">Companies</a></li>
-                                <li><a href="frmCitiesManagement.aspx" class="city">Cities</a></li>
-                                <li><a href="frmBranchesManagement.aspx" class="branche">Branches</a></li>
-                                <li><a href="frmDistancesManagement.aspx" class="distance">Distances</a></li>
-                                <li><a href="frmServicesManagement.aspx" class="service">Services</a></li>
-                                <li><a href="frmFeePoliciesManagement.aspx" class="cart">Fee Policies</a></li>
+                            <h3><a href="#" class="manage">Charge</a></h3>
+                            <ul>   
+                                <li><a href="ServiceManagement.aspx" class="service">Services</a></li>                            
+                                <li><a href="DistanceManagement.aspx" class="distance">Distances</a></li>                               
+                                <li><a href="WeightManagement.aspx" class="cart">Weights</a></li>
                             </ul>
                         </li>
                         <li>
                             <h3><a href="#" class="news">News</a></h3>
                             <ul>
-                                <li><a href="frmAddNewNews.aspx" class="newAdd">Add New News</a></li>
-                                <li><a href="frmNewsManagement.aspx" class="feedback">Feed Back</a></li>
+                                <li><a href="NewsManagement.aspx" class="newAdd">News</a></li>
+                                <li><a href="FeedBackManagement.aspx" class="feedback">Feed Back</a></li>
                             </ul>
                         </li>
                     </ul>

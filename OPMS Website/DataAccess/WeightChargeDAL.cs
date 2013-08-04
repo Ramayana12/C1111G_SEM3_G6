@@ -58,7 +58,7 @@ namespace DataAccess
         public List<WeightCharge> GetAllWeightCharge()
         {
             List<WeightCharge> list = new List<WeightCharge>();
-            using (SqlCommand cmd = GetCommand("getAllServiceCharge", CommandType.StoredProcedure))
+            using (SqlCommand cmd = GetCommand("getAllWeightCharge", CommandType.StoredProcedure))
             {
                 WeightCharge weightCharge = new WeightCharge();
                 using (SqlDataReader dr = ExeDataReader(cmd))
@@ -98,6 +98,27 @@ namespace DataAccess
                 weightCharge = null;
             }
             return list;
+        }
+        #endregion
+
+        #region Check exist WeightCharge
+        public bool ExistWeightCharge(string name)
+        {
+            using (SqlCommand cmd = GetCommand("getWeightChargeByName", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@Name", name);
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
         #endregion
     }

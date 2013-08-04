@@ -4,11 +4,11 @@
     <%--Phan nay dung cho menu--%>
     <div id="topmenu">
         <ul>
-            <li><a href="frmHome.aspx">HOME</a></li>
+            <li><a href="HomeAdmin.aspx">HOME</a></li>
             <li><a href="BranchManagement.aspx">BRANCHES</a></li>
             <li class="current"><a href="AccountManagement.aspx">USERS</a></li>
-            <li><a href="frmServicesManagement.aspx">MANAGEMENT</a></li>
-            <li><a href="frmNewsManagement.aspx">NEWS</a></li>
+            <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
+            <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -45,7 +45,7 @@
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp;<asp:Label ID="Label3" runat="server" Text="Birth Date :"></asp:Label>
-                <asp:TextBox ID="txtBirthDate" runat="server" Width="210px" TextMode="Date"></asp:TextBox>
+                <asp:TextBox ID="txtBirthDate" runat="server" Width="210px" TextMode="DateTime"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvBirthDate" runat="server" ControlToValidate="txtBirthDate"
                     ErrorMessage="Birth Date is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
                 <asp:Label ID="Label8" runat="server" Text="[mm / dd / yyyy]"></asp:Label>
@@ -65,7 +65,7 @@
                     ErrorMessage="Email is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail"
                     ErrorMessage="Email Invalid !" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red">(*)</asp:RegularExpressionValidator>
-                <asp:Label ID="lblCheckEmaiExist" runat="server" ForeColor="Red"></asp:Label><br />
+                <br />
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp;<asp:Label ID="Label12" runat="server" Text="Address :"></asp:Label>

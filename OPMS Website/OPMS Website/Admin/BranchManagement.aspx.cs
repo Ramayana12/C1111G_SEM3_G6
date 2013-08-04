@@ -10,7 +10,7 @@ using Business;
 namespace OPMS_Website.Admin
 {
     public partial class BranchManagement : System.Web.UI.Page
-    {       
+    {
         /// <summary>
         /// 
         /// </summary>
@@ -18,18 +18,14 @@ namespace OPMS_Website.Admin
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-                if (!IsPostBack)
-                {
-                    LoadBranch();
-                }
-            //}
-
+            if (Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (!IsPostBack)
+            {
+                LoadBranch();
+            }
         }
 
         /// <summary>
@@ -99,7 +95,7 @@ namespace OPMS_Website.Admin
         /// <param name="e"></param>
         protected void lbtViewDetails_Command(object sender, CommandEventArgs e)
         {
-            Response.Redirect("BranchUpdate.aspx?BranchID="+e.CommandArgument.ToString());
+            Response.Redirect("BranchUpdate.aspx?BranchID=" + e.CommandArgument.ToString());
         }
 
         //search employee by variable branchID
@@ -128,6 +124,6 @@ namespace OPMS_Website.Admin
             gvEmployee.PageIndex = e.NewPageIndex;
             loadEmployee(branchID);
         }
-              
+
     }
 }

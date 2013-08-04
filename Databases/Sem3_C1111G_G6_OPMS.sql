@@ -95,6 +95,25 @@ CREATE TABLE [Order]
 	Note NVarchar(300),
 );
 
+CREATE TABLE News
+(
+	ID int IDENTITY(1,1) CONSTRAINT pk_News_ID PRIMARY KEY,
+	Title NVarchar(500),
+	[Subject] NText,
+	Content NText,
+	CreateDate datetime CONSTRAINT df_News_CreateDate DEFAULT GETDATE(),
+	Active bit CONSTRAINT df_News_Active DEFAULT 1
+);
+
+CREATE TABLE FeedBack
+(
+	ID int IDENTITY(1,1) CONSTRAINT pk_FeedBack_ID PRIMARY KEY,
+	FullName NVarchar(50) NOT NULL,
+	Email Varchar(50) NOT NULL,
+	Content NText,
+	CreateDate datetime CONSTRAINT df_FeedBack_CreateDate DEFAULT GETDATE(),
+);
+
 GO
 
 -------------------------------------------------------------------------------------------------------------
@@ -318,7 +337,14 @@ CREATE PROCEDURE getServiceChargeByID
 AS
 	SELECT * FROM ServiceCharge
 	WHERE ID = @ID
-GO											
+GO
+
+CREATE PROCEDURE getServiceChargeByName
+@Name Nvarchar(20)
+AS
+	SELECT * FROM ServiceCharge
+	WHERE Name = @Name
+GO												
 
 									--- **** _____ DistanceCharge _____ **** ---		
 									
@@ -361,7 +387,14 @@ CREATE PROCEDURE getDistanceChargeByID
 AS
 	SELECT * FROM DistanceCharge
 	WHERE ID = @ID
-GO											
+GO
+
+CREATE PROCEDURE getDistanceChargeByName
+@Name Nvarchar(20)
+AS
+	SELECT * FROM DistanceCharge
+	WHERE Name = @Name
+GO													
 
 									--- **** _____ WeightCharge _____ **** ---		
 									
@@ -394,7 +427,7 @@ AS
 	WHERE ID = @ID
 GO
 
-CREATE PROCEDURE getAlWeightCharge
+CREATE PROCEDURE getAllWeightCharge
 AS
 	SELECT * FROM WeightCharge
 GO
@@ -405,6 +438,102 @@ AS
 	SELECT * FROM WeightCharge
 	WHERE ID = @ID
 GO
+
+CREATE PROCEDURE getWeightChargeByName
+@Name Nvarchar(20)
+AS
+	SELECT * FROM WeightCharge
+	WHERE Name = @Name
+GO	
+
+									--- **** _____ News _____ **** ---
+
+CREATE PROCEDURE insertNews
+@Title NVarchar(500),
+@Subject NText,
+@Content NText
+AS
+	INSERT INTO News(Title, [Subject], Content) 
+	VALUES (@Title, @Subject, @Content);
+GO
+
+CREATE PROCEDURE updateNews
+@ID int,
+@Title NVarchar(500),
+@Subject NText,
+@Content NText,
+@Active bit
+AS
+	UPDATE News 
+	SET Title = @Title,
+		[Subject] = @Subject,
+		Content = @Content,
+		Active = @Active
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE deleteNews
+@ID int
+AS
+	DELETE FROM News
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE getAllNews
+AS
+	SELECT * FROM News
+GO
+
+CREATE PROCEDURE getNewsByID
+@ID int
+AS
+	SELECT * FROM News
+	WHERE ID = @ID
+GO
+
+									--- **** _____ FeedBack _____ **** ---
+
+CREATE PROCEDURE insertFeedBack
+@FullName NVarchar(50),
+@Email Varchar(50),
+@Content NText
+AS
+	INSERT INTO FeedBack (FullName, Email, Content)
+	VALUES (@FullName, @Email, @Content);
+GO
+
+CREATE PROCEDURE updateFeedBack
+@ID int,
+@FullName NVarchar(50),
+@Email Varchar(50),
+@Content NText
+AS
+	UPDATE FeedBack 
+	SET FullName = @FullName,
+		Email = @Email,
+		Content = @Content
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE deleteFeedBack
+@ID int
+AS
+	DELETE FROM FeedBack
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE getAllFeedBack
+AS
+	SELECT * FROM FeedBack
+GO
+
+CREATE PROCEDURE getFeedBackByID
+@ID int
+AS
+	SELECT * FROM FeedBack
+	WHERE ID = @ID
+GO
+
 -------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO Branch VALUES('Ha Noi','HN@abc.com','123456789','Ha noi',''),

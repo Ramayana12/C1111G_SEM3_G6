@@ -13,37 +13,44 @@ namespace Business
         public static ServiceChargeDAL db = new ServiceChargeDAL();
 
         #region Insert ServiceCharge
-        public bool InsertServiceCharge(ServiceCharge serviceCharge)
+        public static bool InsertServiceCharge(ServiceCharge serviceCharge)
         {
             return db.InsertServiceCharge(serviceCharge);
         }
         #endregion
 
         #region Update ServiceCharge
-        public bool UpdateServiceCharge(ServiceCharge serviceCharge)
+        public static bool UpdateServiceCharge(ServiceCharge serviceCharge)
         {
             return db.UpdateServiceCharge(serviceCharge);
         }
         #endregion
 
         #region Delete ServiceCharge
-        public bool DeleteServiceCharge(int id)
+        public static bool DeleteServiceCharge(int id)
         {
             return db.DeleteServiceCharge(id);
         }
         #endregion
 
         #region Get All ServiceCharge
-        public List<ServiceCharge> GetAllServiceCharge()
+        public static List<ServiceCharge> GetAllServiceCharge()
         {
             return db.GetAllServiceCharge();
         }
         #endregion
 
         #region Get ServiceCharge by ID
-        public List<ServiceCharge> GetServiceChargeByID(string id)
+        public static List<ServiceCharge> GetServiceChargeByID(string id)
         {
             return db.GetServiceChargeByID(id);
+        }
+        #endregion
+
+        #region Check exist ServiceCharge
+        public static bool ExistServiceCharge(string name)
+        {
+            return db.ExistServiceCharge(name);
         }
         #endregion
     }

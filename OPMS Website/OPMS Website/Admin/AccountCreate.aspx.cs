@@ -13,14 +13,13 @@ namespace OPMS_Website.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
+            if (Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadBranches();
-                lblStatusAddNewAccount.Text = Common.Encrypt("123456");
             }
         }
 
@@ -48,7 +47,8 @@ namespace OPMS_Website.Admin
                 bool result = AccountBLL.InsertAccount(account);
                 if (result)
                 {
-                    
+                    lblStatusAddNewAccount.Text = "create new Account Successful!";
+                    Response.Redirect("AccountManagement.aspx");
                 }
                 else
                 {
@@ -70,6 +70,7 @@ namespace OPMS_Website.Admin
             else
             {
                 lblCheckUserNameExist.Text = "";
+                ddlRole.Focus();
                 ck = true;
             }
             return ck;

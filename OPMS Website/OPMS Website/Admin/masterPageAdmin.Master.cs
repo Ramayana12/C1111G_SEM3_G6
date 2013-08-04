@@ -11,27 +11,24 @@ namespace OPMS_Website.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["UserName"] == null || Session["AccountID"] == null)
-            //{
-            //    Response.Redirect("frmLoginForm.aspx");
-            //}
-            //else
-            //{
-            //    lbtUserName.Text = (string)Session["UserName"];
-            //}
+            if (Session["UserName"] == null || Session["AccountID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                lbtUserName.Text = Session["UserName"].ToString();
+            }
         }
 
         protected void lbtLogout_Click(object sender, EventArgs e)
-        {
-            Session["UserName"] = null;
-            Session["Password"] = null;
+        {            
             Session["AccountID"] = null;
         }
 
         protected void lbtnHomePage_Click(object sender, EventArgs e)
         {
             Session["UserName"] = null;
-            Session["Password"] = null;
         }
     }
 }

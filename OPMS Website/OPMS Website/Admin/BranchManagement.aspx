@@ -4,11 +4,11 @@
     <%--Phan nay dung cho menu--%>
     <div id="topmenu">
         <ul>
-            <li><a href="frmHome.aspx">HOME</a></li>
+            <li><a href="HomeAdmin.aspx">HOME</a></li>
             <li class="current"><a href="BranchManagement.aspx">BRANCHES</a></li>
-            <li><a href="frmAccountsManagement.aspx">USERS</a></li>
-            <li><a href="frmServicesManagement.aspx">MANAGEMENT</a></li>
-            <li><a href="frmNewsManagement.aspx">NEWS</a></li>
+            <li><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
+            <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
     </div>
 </asp:Content>

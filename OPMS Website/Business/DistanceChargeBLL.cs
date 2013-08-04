@@ -13,37 +13,44 @@ namespace Business
         public static DistanceChargeDAL db = new DistanceChargeDAL();
 
         #region Insert DistanceCharge
-        public bool InsertDistanceCharge(DistanceCharge distanceCharge)
+        public static bool InsertDistanceCharge(DistanceCharge distanceCharge)
         {
             return db.InsertDistanceCharge(distanceCharge);
         }
         #endregion
 
         #region Update DistanceCharge
-        public bool UpdateDistanceCharge(DistanceCharge distanceCharge)
+        public static bool UpdateDistanceCharge(DistanceCharge distanceCharge)
         {
             return db.UpdateDistanceCharge(distanceCharge);
         }
         #endregion
 
         #region Delete DistanceCharge
-        public bool DeleteDistanceCharge(int id)
+        public static bool DeleteDistanceCharge(int id)
         {
             return db.DeleteDistanceCharge(id);
         }
         #endregion
 
         #region Get All DistanceCharge
-        public List<DistanceCharge> GetAllDistanceCharge()
+        public static List<DistanceCharge> GetAllDistanceCharge()
         {
             return db.GetAllDistanceCharge();
         }
         #endregion
 
         #region Get DistanceCharge by ID
-        public List<DistanceCharge> GetDistanceChargeByID(string id)
+        public static List<DistanceCharge> GetDistanceChargeByID(string id)
         {
             return db.GetDistanceChargeByID(id);
+        }
+        #endregion
+
+        #region Check exist DistanceCharge
+        public static bool ExistDistanceCharge(string name)
+        {
+            return db.ExistDistanceCharge(name);
         }
         #endregion
     }

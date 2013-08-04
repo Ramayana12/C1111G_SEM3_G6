@@ -198,10 +198,41 @@ namespace DataAccess
         }
         #endregion
 
+        #region Check Login Account
+        /// <summary>
+        /// Check Login Account
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public List<Account> CheckLoginAccount(string userName, string password)
+        {
+            List<Account> list = new List<Account>();
+            using (SqlCommand cmd = GetCommand("checkLoginAccount", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@UserName", userName);
+                AddParameter(cmd, "@Password", password);
+                Account account = new Account();
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            list.Add(account.AccountIDatareader(dr));
+                        }
+                        account = null;
+                        return list;
+                    }
+                    else
+                        return null;
+                }               
+            }
+        }
+        #endregion
+
         #region Check Exist UserName
         public bool CheckExistUserName(string userName)
         {
-            List<Account> list = new List<Account>();
             using (SqlCommand cmd = GetCommand("getAccountByUserName", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@UserName", userName);

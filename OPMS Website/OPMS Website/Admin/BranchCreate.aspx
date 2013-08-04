@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="BranchCreate.aspx.cs" Inherits="OPMS_Website.Admin.BranchCreate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%--Phan nay dung cho menu--%>
+   <%--Phan nay dung cho menu--%>
     <div id="topmenu">
         <ul>
-            <li><a href="frmHome.aspx">HOME</a></li>
-            <li class="current"><a href="BranchesManagement.aspx">BRANCHES</a></li>
-            <li><a href="frmAccountsManagement.aspx">USERS</a></li>
-            <li><a href="frmServicesManagement.aspx">MANAGEMENT</a></li>
-            <li><a href="frmNewsManagement.aspx">NEWS</a></li>
+            <li><a href="HomeAdmin.aspx">HOME</a></li>
+            <li class="current"><a href="BranchManagement.aspx">BRANCHES</a></li>
+            <li><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
+            <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -50,7 +50,6 @@
                 <asp:TextBox ID="txtPhone" runat="server" Width="213px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone"
                     ErrorMessage="Phone Number is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>&nbsp;<br />
-
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="_lblAddress" runat="server" Text="Address :"></asp:Label>
@@ -60,7 +59,6 @@
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                 &nbsp;
                 <br />
-
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="lblDescription" runat="server" Text="Description :"></asp:Label>
@@ -75,7 +73,7 @@
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Button ID="btnCreateBranch" runat="server" Text="Create Branch" OnClick="btnCreateBranch_Click" />
-                <asp:Button ID="btnCancel" runat="server" Text="Cancel" PostBackUrl="~/Admin/frmBranchesManagement.aspx" CausesValidation="False" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" PostBackUrl="~/Admin/BranchManagement.aspx" CausesValidation="False" />
                 <br />
                 <br />
             </fieldset>
