@@ -40,7 +40,7 @@ namespace DataTransferObject
             Address = "";
             BirthDate = "";
             CreateDate = "";
-            Picture = "'~/Admin/imageEmployees/anonymous.png'";
+            Picture = "~/Admin/imageEmployees/anonymous.png";
             Description = "";
             Active = "";
         }

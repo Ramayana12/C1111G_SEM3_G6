@@ -30,7 +30,8 @@ namespace OPMS_Website.Admin
             account = AccountBLL.GetAccountByID(Session["AccountID"].ToString())[0];
             txtFullName.Text = account.FullName;
             imgPicture.ImageUrl = account.Picture;
-            txtBirthDate.Text = Convert.ToDateTime(account.BirthDate).ToShortDateString();
+            //txtBirthDate.Text = Convert.ToDateTime(account.BirthDate).ToShortDateString();
+            txtBirthDate.Text = (account.BirthDate == "1/1/1900 12:00:00 AM" || account.BirthDate == "") ? "" : Convert.ToDateTime(account.BirthDate).ToShortDateString();
             txtEmail.Text = account.Email;
             txtPhone.Text = account.Phone;
             txtAddress.Text = account.Address;

@@ -537,9 +537,29 @@ GO
 -------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO Branch VALUES('Ha Noi','HN@abc.com','123456789','Ha noi',''),
-						('Hai Phong','HP@abc.com','963258741','Hai phong',''),
-						('TP HCM','HCM@abc.com','258741369','Sai Gon','')
+						('Hai Phong','HP@abc.com','987654321','Hai phong',''),
+						('TP HCM','HCM@abc.com','147852369','Sai Gon','')
+
+EXECUTE insertAccount 1, 'Admin', 'e10adc3949ba59abbe56e057f20f883e', 'Administrator', 'Super Admin', '', '', '', '', '~/Admin/imageEmployees/anonymous.png', 'Default Admin';
+GO
+
+INSERT INTO ServiceCharge VALUES ('Normal', 10, ''),
+								 ('Fast', 15, ''),
+								 ('VPP', 16, 'Receiver pay')
+
+INSERT INTO DistanceCharge VALUES ('Local', 10, ''),
+								 ('Up to 100 Km', 15, ''),
+								 ('Over 100 - 300 Km', 20, ''),
+								 ('Over 300 - 500 Km', 25, ''),
+								 ('Over 500 Km', 25, '')
+
+INSERT INTO WeightCharge VALUES ('Up to 100 gr', 10, ''),
+								 ('Over 100 - 300 gr', 15, ''),
+								 ('Over 300 - 500 gr', 20, ''),
+								 ('Over 500 - 1000 gr', 25, ''),
+								 ('Over 1000 - 2000 gr', 30, ''),
+								 ('Over 2000 gr', 35, '')
+GO								 
 
 -------------------------------------------------------------------------------------------------------------------
-GO
 						

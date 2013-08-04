@@ -16,7 +16,6 @@ namespace OPMS_Website.Admin
             if (!IsPostBack)
             {
                 txtUserName.Focus();
-                lblStatusLogin.Text = "";
             }
         }
 

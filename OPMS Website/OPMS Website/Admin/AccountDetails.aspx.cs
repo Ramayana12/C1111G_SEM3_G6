@@ -32,7 +32,8 @@ namespace OPMS_Website.Admin
             txtFullName.Text = account.FullName;
             imgPicture.ImageUrl = account.Picture;
             //txtBirthDate.Text = Convert.ToDateTime(account.BirthDate).ToShortDateString();
-            txtBirthDate.Text = (account.BirthDate.Equals("1/1/1900 12:00:00 AM") || account.BirthDate == null) ? null : Convert.ToDateTime(account.BirthDate).ToShortDateString();
+            //txtBirthDate.Text = (account.BirthDate == "") ? "" : Convert.ToDateTime(account.BirthDate).ToShortDateString();
+            txtBirthDate.Text = (account.BirthDate == "1/1/1900 12:00:00 AM" || account.BirthDate == "") ? "" : Convert.ToDateTime(account.BirthDate).ToShortDateString();
             txtEmail.Text = account.Email;
             txtPhone.Text = account.Phone;
             txtAddress.Text = account.Address;
@@ -40,7 +41,7 @@ namespace OPMS_Website.Admin
             ddlBranches.SelectedValue = account.BranchID;
             ddlRole.SelectedIndex = (account.Role.Equals("Administrator")) ? 1 : 0;
             cbActive.Checked = Convert.ToBoolean(account.Active);
-            txtDescription.Text = account.Description;
+            txtDescription.Text = account.Description;           
         }
 
         public void LoadBranches()
