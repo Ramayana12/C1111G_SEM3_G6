@@ -28,7 +28,7 @@ CREATE TABLE Branch
 CREATE TABLE Account
 (
 	ID int IDENTITY(1,1) CONSTRAINT pk_Account_ID PRIMARY KEY,
-	BranchID int CONSTRAINT fk_Account_Branch FOREIGN KEY (BranchID) REFERENCES Branch(ID),
+	BranchID int CONSTRAINT fk_Account_Branch FOREIGN KEY (BranchID) REFERENCES Branch(ID) ON DELETE CASCADE ON UPDATE CASCADE,
 	UserName varchar(50) NOT NULL CONSTRAINT uq_Account_UserName UNIQUE,
 	[Password] varchar(32) NOT NULL,
 	[Role] Varchar(15) NOT NULL CONSTRAINT ck_Account_Role CHECK ([Role] IN ('Administrator', 'Employee')),
@@ -76,19 +76,19 @@ CREATE TABLE [Order]
 	SenderName Nvarchar(50) NOT NULL,
 	SenderAddress NVarchar(300) NOT NULL,
 	SenderPhone Varchar(15) NOT NULL,
-	EmployeeID int CONSTRAINT fk_Oder_Account1 FOREIGN KEY (EmployeeID) REFERENCES Account(ID),
+	EmployeeID int CONSTRAINT fk_Oder_Account1 FOREIGN KEY (EmployeeID) REFERENCES Account(ID) ON DELETE CASCADE ON UPDATE CASCADE,
 	
 	--RECEIVER
 	ReceiverName Nvarchar(50) NOT NULL,
 	ReceiverAddress NVarchar(300) NOT NULL,
 	ReceiverPhone Varchar(15) NOT NULL,
-	DeleveryEmployeeID int CONSTRAINT fk_Oder_Account2 FOREIGN KEY (DeleveryEmployeeID) REFERENCES Account(ID),
+	DeleveryEmployeeID int CONSTRAINT fk_Oder_Account2 FOREIGN KEY (DeleveryEmployeeID) REFERENCES Account(ID) ON DELETE CASCADE ON UPDATE CASCADE,
 	ReceiveDate datetime,
 	
 	--MAIL
-	ServiceChargeID int CONSTRAINT fk_Order_ServiceCharge FOREIGN KEY (ServiceChargeID) REFERENCES ServiceCharge(ID),
-	DistanceChargeID int CONSTRAINT fk_Order_DistanceCharge FOREIGN KEY (DistanceChargeID) REFERENCES DistanceCharge(ID),
-	WeightChargeID int CONSTRAINT fk_Order_WeightCharge FOREIGN KEY (WeightChargeID) REFERENCES WeightCharge(ID),
+	ServiceChargeID int CONSTRAINT fk_Order_ServiceCharge FOREIGN KEY (ServiceChargeID) REFERENCES ServiceCharge(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+	DistanceChargeID int CONSTRAINT fk_Order_DistanceCharge FOREIGN KEY (DistanceChargeID) REFERENCES DistanceCharge(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+	WeightChargeID int CONSTRAINT fk_Order_WeightCharge FOREIGN KEY (WeightChargeID) REFERENCES WeightCharge(ID) ON DELETE CASCADE ON UPDATE CASCADE,
 
 	--STATUS
 	[Status] NVarchar(20) DEFAULT 'Sending' CONSTRAINT ck_Order_Status CHECK ([Status] IN ('Sending', 'Sent', 'Return')),
@@ -274,6 +274,13 @@ AS
 	WHERE Active = @Active
 GO
 
+CREATE PROCEDURE getAccountByRole
+@Role Varchar(15)
+AS
+	SELECT * FROM Account
+	WHERE Role = @Role
+GO
+
 CREATE PROCEDURE searchAccountByUserName
 @UserName NVarchar(50)
 AS
@@ -286,6 +293,13 @@ CREATE PROCEDURE searchAccountByFullName
 AS
 	SELECT * FROM Account
 	WHERE FullName LIKE ('%'+@FullName+'%')
+GO
+
+CREATE PROCEDURE searchAccountByName
+@Name NVarchar(50)
+AS
+	SELECT * FROM Account
+	WHERE UserName LIKE ('%'+@Name+'%') OR FullName LIKE ('%'+@Name+'%')
 GO
 
 CREATE PROCEDURE checkLoginAccount

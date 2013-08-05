@@ -198,6 +198,30 @@ namespace DataAccess
         }
         #endregion
 
+        #region Get Account by Role
+        public List<Account> GetAccountByRole(string role)
+        {
+            List<Account> list = new List<Account>();
+            using (SqlCommand cmd = GetCommand("getAccountByRole", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@Role", role);
+                Account account = new Account();
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            list.Add(account.AccountIDatareader(dr));
+                        }
+                    }
+                }
+                account = null;
+            }
+            return list;
+        }
+        #endregion
+
         #region Check Login Account
         /// <summary>
         /// Check Login Account
@@ -287,6 +311,30 @@ namespace DataAccess
             using (SqlCommand cmd = GetCommand("searchAccountByFullName", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@FullName", fullName);
+                Account account = new Account();
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            list.Add(account.AccountIDatareader(dr));
+                        }
+                    }
+                }
+                account = null;
+            }
+            return list;
+        }
+        #endregion
+
+        #region Search Account by FullName or UserName
+        public List<Account> SearchAccountByName(string name)
+        {
+            List<Account> list = new List<Account>();
+            using (SqlCommand cmd = GetCommand("searchAccountByName", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@Name", name);
                 Account account = new Account();
                 using (SqlDataReader dr = ExeDataReader(cmd))
                 {

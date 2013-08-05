@@ -43,19 +43,11 @@ namespace OPMS_Website.Admin
 
         protected void txtUserName_TextChanged(object sender, EventArgs e)
         {
-            gvAccountsList.DataSource = AccountBLL.SearchAccountByUserName(txtUserName.Text);
+            gvAccountsList.DataSource = AccountBLL.SearchAccountByName(txtUserName.Text);
             gvAccountsList.DataBind();
 
             lblTotalRecord.Text = gvAccountsList.Rows.Count.ToString();
-        }
-
-        protected void txtFullName_TextChanged(object sender, EventArgs e)
-        {
-            gvAccountsList.DataSource = AccountBLL.SearchAccountByFullName(txtFullName.Text);
-            gvAccountsList.DataBind();
-
-            lblTotalRecord.Text = gvAccountsList.Rows.Count.ToString();
-        }
+        }       
 
         protected void ddlBranches_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -91,5 +83,12 @@ namespace OPMS_Website.Admin
             LoadAccounts();
         }
 
+        protected void ddlRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gvAccountsList.DataSource = AccountBLL.GetAccountByRole(ddlRole.SelectedValue.ToString());
+            gvAccountsList.DataBind();
+
+            lblTotalRecord.Text = gvAccountsList.Rows.Count.ToString();
+        }
     }
 }

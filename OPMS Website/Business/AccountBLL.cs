@@ -68,6 +68,13 @@ namespace Business
         }
         #endregion
 
+        #region Get Account by Role
+        public static List<Account> GetAccountByRole(string role)
+        {
+            return db.GetAccountByRole(role);
+        }
+        #endregion
+
         #region Check Login Account
         public static List<Account> CheckLoginAccount(string userName, string password)
         {
@@ -103,6 +110,18 @@ namespace Business
         public static List<Account> SearchAccountByFullName(string fullName)
         {
             return db.SearchAccountByFullName(fullName);
+        }
+        #endregion
+
+        #region Search Account by FullName or UserName
+        /// <summary>
+        /// Search Account by Name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static List<Account> SearchAccountByName(string name)
+        {
+            return db.SearchAccountByName(name);
         }
         #endregion
     }

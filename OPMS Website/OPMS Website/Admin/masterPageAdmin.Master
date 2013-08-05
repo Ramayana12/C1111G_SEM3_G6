@@ -41,11 +41,11 @@
                             <h3><a href="#" class="house">Wellcome</a></h3>
                             <ul>
                                 <li>
-                                    <asp:LinkButton ID="lbtUserName" CausesValidation="false" runat="server"></asp:LinkButton></li>
+                                    <asp:LinkButton ID="lbtUserName" CausesValidation="false" runat="server" CssClass="user"></asp:LinkButton></li>
                                 <li><a href="AccountChangePassword.aspx" class="report">Change Password</a></li>
                                 <li><a href="AccountUpdateProfile.aspx" class="report">Update Profile</a></li>
                                 <li>
-                                    <asp:LinkButton ID="lbtLogout" CausesValidation="false" Text="LogOut" runat="server" OnClick="lbtLogout_Click" PostBackUrl="~/Admin/Login.aspx"></asp:LinkButton></li>
+                                    <asp:LinkButton ID="lbtLogout" CausesValidation="false" Text="LogOut" CssClass="logout" runat="server" OnClick="lbtLogout_Click" PostBackUrl="~/Admin/Login.aspx"></asp:LinkButton></li>
                             </ul>
                         </li>
                         <li>
