@@ -28,7 +28,8 @@
         <div class="form">
             <fieldset id="personal" class="form" style="text-align: left">
                 <legend class="legend" style="width: 54px">SEARCH</legend>&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label1" runat="server" Text="Name: "></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Name: "></asp:Label>
                 <asp:TextBox ID="txtUserName" runat="server" Width="150px" AutoPostBack="True" OnTextChanged="txtUserName_TextChanged" ToolTip="Input FullName or Username"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 <asp:Label ID="Label3" runat="server" Text="Role :"></asp:Label>&nbsp;
@@ -91,7 +92,7 @@
                                     CommandArgument='<%# Eval("ID") %>'
                                     OnClientClick="return confirm('Are you sure you want to delete this record ?')"
                                     runat="server" ToolTip="Remove  Account" CommandName="RemoveAccount"
-                                    OnCommand="lbtnDelete_Command">Remove</asp:LinkButton>&nbsp;&nbsp;
+                                    OnCommand="lbtnDelete_Command"><%# Eval("ID").Equals(Session["AccountID"]) ? "" : "Remove" %></asp:LinkButton>&nbsp;&nbsp;
                                     &nbsp;
                                 <asp:LinkButton ID="lbtnDeactivate"
                                     CommandArgument='<%# Eval("ID") %>' runat="server"

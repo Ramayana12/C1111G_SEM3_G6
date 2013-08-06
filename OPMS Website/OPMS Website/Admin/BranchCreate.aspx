@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="BranchCreate.aspx.cs" Inherits="OPMS_Website.Admin.BranchCreate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <%--Phan nay dung cho menu--%>
+    <%--Phan nay dung cho menu--%>
     <div id="topmenu">
         <ul>
             <li><a href="HomeAdmin.aspx">HOME</a></li>
@@ -49,7 +49,10 @@
             <asp:Label ID="lblPhone" runat="server" Text="Phone :"></asp:Label>
                 <asp:TextBox ID="txtPhone" runat="server" Width="213px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone"
-                    ErrorMessage="Phone Number is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>&nbsp;<br />
+                    ErrorMessage="Phone Number is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPhone"
+                    ErrorMessage="Phone Invalid !" ValidationExpression="^0\d{9,10}$" ForeColor="Red">(*)</asp:RegularExpressionValidator>
+                &nbsp;<br />
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="_lblAddress" runat="server" Text="Address :"></asp:Label>
@@ -66,7 +69,6 @@
                 &nbsp;&nbsp;&nbsp;
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Following error occurs:" ShowMessageBox="false" ShowSummary="true" ForeColor="Red" />
                 &nbsp;<br />
-                <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="lblStatusAddNewBranch" runat="server" ForeColor="Red"></asp:Label><br />

@@ -82,13 +82,13 @@ CREATE TABLE [Order]
 	ReceiverName Nvarchar(50) NOT NULL,
 	ReceiverAddress NVarchar(300) NOT NULL,
 	ReceiverPhone Varchar(15) NOT NULL,
-	DeleveryEmployeeID int CONSTRAINT fk_Oder_Account2 FOREIGN KEY (DeleveryEmployeeID) REFERENCES Account(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+	DeleveryEmployeeID int CONSTRAINT fk_Oder_Account2 FOREIGN KEY (DeleveryEmployeeID) REFERENCES Account(ID),
 	ReceiveDate datetime,
 	
 	--MAIL
-	ServiceChargeID int CONSTRAINT fk_Order_ServiceCharge FOREIGN KEY (ServiceChargeID) REFERENCES ServiceCharge(ID) ON DELETE CASCADE ON UPDATE CASCADE,
-	DistanceChargeID int CONSTRAINT fk_Order_DistanceCharge FOREIGN KEY (DistanceChargeID) REFERENCES DistanceCharge(ID) ON DELETE CASCADE ON UPDATE CASCADE,
-	WeightChargeID int CONSTRAINT fk_Order_WeightCharge FOREIGN KEY (WeightChargeID) REFERENCES WeightCharge(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+	ServiceChargeID int CONSTRAINT fk_Order_ServiceCharge FOREIGN KEY (ServiceChargeID) REFERENCES ServiceCharge(ID),
+	DistanceChargeID int CONSTRAINT fk_Order_DistanceCharge FOREIGN KEY (DistanceChargeID) REFERENCES DistanceCharge(ID),
+	WeightChargeID int CONSTRAINT fk_Order_WeightCharge FOREIGN KEY (WeightChargeID) REFERENCES WeightCharge(ID),
 
 	--STATUS
 	[Status] NVarchar(20) DEFAULT 'Sending' CONSTRAINT ck_Order_Status CHECK ([Status] IN ('Sending', 'Sent', 'Return')),
@@ -254,10 +254,12 @@ AS
 GO
 
 CREATE PROCEDURE getAccountByBranchID
-@ID int
+@BranchID int
 AS
-	SELECT * FROM Account
-	WHERE ID = @ID
+	SELECT * FROM Account A
+	INNER JOIN Branch B
+	ON A.BranchID = B.ID
+	WHERE A.BranchID = @BranchID
 GO
 
 CREATE PROCEDURE getAccountByUserName
@@ -550,16 +552,30 @@ GO
 
 -------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO Branch VALUES('Ha Noi','HN@abc.com','123456789','Ha noi',''),
-						('Hai Phong','HP@abc.com','987654321','Hai phong',''),
-						('TP HCM','HCM@abc.com','147852369','Sai Gon','')
+INSERT INTO Branch VALUES('Ha Noi','HN@abc.com','0123456789','Ha noi','Viet Nam capital'),
+						('Hai Phong','HP@abc.com','0987654321','Hai phong',''),
+						('Hue','Hue@abc.com','0852147963','Hai phong',''),
+						('Da Nang','DN@abc.com','0963258741','Hai phong',''),
+						('Nha Trang','NT@abc.com','0852369741','Hai phong',''),
+						('TP HCM','HCM@abc.com','0147852369','Sai Gon','big city')
 
-EXECUTE insertAccount 1, 'Admin', 'e10adc3949ba59abbe56e057f20f883e', 'Administrator', 'Super Admin', '', '', '', '', '~/Admin/imageEmployees/anonymous.png', 'Default Admin';
+EXECUTE insertAccount '1', 'Admin', 'e10adc3949ba59abbe56e057f20f883e', 'Administrator', 'Super Admin', 'sa@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', 'Default Admin';
+
+EXECUTE insertAccount 1, 'Employee', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Staff', 'sf@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 1, 'QuanDN', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Duong Ngoc Quan', 'Quandn@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 2, 'Dungnt', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Nguyen Tan Dung', 'dungnt@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 2, 'DuyTV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Tran Van Duy', 'Duytv@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 3, 'Chinhdt', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Do Trung Chinh', 'Chinhdt@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 4, 'VietNV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Ngo Van Viet', 'VietNV@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 5, 'LinhHT', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Hoang Thuy Linh', 'LinhHT@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 6, 'Trinh', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Ngoc Trinh', 'Trinh@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 6, 'AnNV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Nguyen Van An', 'Annv@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+
 GO
 
-INSERT INTO ServiceCharge VALUES ('Normal', 10, ''),
-								 ('Fast', 15, ''),
-								 ('VPP', 16, 'Receiver pay')
+INSERT INTO ServiceCharge VALUES ('NORMAL MAIL', 15, 'This service usually transfer mail allows the sender of the parcel or letter. This service is offered to customers who do not require in terms of time, with features such Normal Mail is the appropriate choice for customers.'),
+								 ('EXPRESS MAIL', 10, 'This service allows people to send parcels quickly and ensures on-time service will be transported in the shortest possible time, possibly within a day.'),								 
+								 ('VPP', 16, 'This is a service that allows people to send parcels to recipients, and recipients will pay for the cost of parcel post.')							 
 
 INSERT INTO DistanceCharge VALUES ('Local', 10, ''),
 								 ('Up to 100 Km', 15, ''),

@@ -213,6 +213,13 @@
     <Content Include="Admin\WeightCreate.aspx" />
     <Content Include="Admin\WeightManagement.aspx" />
     <Content Include="Admin\WeightUpdate.aspx" />
+    <Content Include="Employee\EmployeeChangePassword.aspx" />
+    <Content Include="Employee\OrderCreate.aspx" />
+    <Content Include="Employee\EmployeeUpdateProfile.aspx" />
+    <Content Include="Employee\HomeEmployee.aspx" />
+    <Content Include="Employee\OrderDetails.aspx" />
+    <Content Include="Employee\OrderManagement.aspx" />
+    <Content Include="Employee\OrderUpdate.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -392,6 +399,62 @@
     <Compile Include="Admin\WeightUpdate.aspx.designer.cs">
       <DependentUpon>WeightUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Employee\EmployeeChangePassword.aspx.cs">
+      <DependentUpon>EmployeeChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\EmployeeChangePassword.aspx.designer.cs">
+      <DependentUpon>EmployeeChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\OrderCreate.aspx.cs">
+      <DependentUpon>OrderCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\OrderCreate.aspx.designer.cs">
+      <DependentUpon>OrderCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeUpdateProfile.aspx.cs">
+      <DependentUpon>EmployeeUpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\EmployeeUpdateProfile.aspx.designer.cs">
+      <DependentUpon>EmployeeUpdateProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\HomeEmployee.aspx.cs">
+      <DependentUpon>HomeEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\HomeEmployee.aspx.designer.cs">
+      <DependentUpon>HomeEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\masterPageEmployee.Master.cs">
+      <DependentUpon>masterPageEmployee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\masterPageEmployee.Master.designer.cs">
+      <DependentUpon>masterPageEmployee.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\OrderManagement.aspx.cs">
+      <DependentUpon>OrderManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\OrderManagement.aspx.designer.cs">
+      <DependentUpon>OrderManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\OrderUpdate.aspx.cs">
+      <DependentUpon>OrderUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\OrderUpdate.aspx.designer.cs">
+      <DependentUpon>OrderUpdate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -403,6 +466,7 @@
     <Content Include="Admin\img\icons\Thumbs.db" />
     <Content Include="Admin\img\Thumbs.db" />
     <Content Include="Admin\masterPageAdmin.Master" />
+    <Content Include="Employee\masterPageEmployee.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -420,9 +484,7 @@
       <Name>DataTransferObject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Employee\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

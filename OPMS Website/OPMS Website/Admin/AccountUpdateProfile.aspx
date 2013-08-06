@@ -55,7 +55,9 @@
                     runat="server" Text="Phone Number :"></asp:Label>
                 <asp:TextBox ID="txtPhone" runat="server" Width="210px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone"
-                    ErrorMessage="Phone Number is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator><br />
+                    ErrorMessage="Phone Number is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPhone"
+                    ErrorMessage="Phone Invalid !" ValidationExpression="^0\d{9,10}$" ForeColor="Red">(*)</asp:RegularExpressionValidator><br />
                 &nbsp; &nbsp;<br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

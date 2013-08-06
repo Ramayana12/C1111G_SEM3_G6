@@ -127,7 +127,7 @@ namespace DataAccess
             List<Account> list = new List<Account>();
             using (SqlCommand cmd = GetCommand("getAccountByBranchID", CommandType.StoredProcedure))
             {
-                AddParameter(cmd, "@ID", Convert.ToInt32(id));
+                AddParameter(cmd, "@BranchID", Convert.ToInt32(id));
                 Account account = new Account();
                 using (SqlDataReader dr = ExeDataReader(cmd))
                 {

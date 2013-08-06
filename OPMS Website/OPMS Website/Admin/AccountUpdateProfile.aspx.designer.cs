@@ -148,6 +148,15 @@ namespace OPMS_Website.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhone;
         
         /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
         /// Label11 control.
         /// </summary>
         /// <remarks>

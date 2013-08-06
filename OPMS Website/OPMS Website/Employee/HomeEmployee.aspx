@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Employee/masterPageEmployee.Master" AutoEventWireup="true" CodeBehind="HomeEmployee.aspx.cs" Inherits="OPMS_Website.Employee.HomeEmployee" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--Phan nay dung cho menu--%>
     <div id="topmenu">
-    	<ul>
-        	<li class="current"><a href="HomeEmployee.aspx">HOME</a></li>
-            <li><a href="OrderManagement.aspx">ORDERS</a></li>        	                           
+        <ul>
+            <li class="current"><a href="HomeEmployee.aspx">HOME</a></li>
+            <li><a href="OrderManagement.aspx">ORDERS</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -13,7 +14,7 @@
         <h3>Wellcome</h3>
         <div id="Div1" class="form" runat="server">
             <fieldset id="personal" class="form" style="text-align: left">
-            <legend class="legend" style="width: 85px">INFORMATION</legend>
+                <legend class="legend" style="width: 85px">INFORMATION</legend>
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:Label ID="Label1" runat="server" Text="Full Name :"></asp:Label>
@@ -39,7 +40,7 @@
                 <asp:Label ID="Label6" runat="server" Text="Order at Branch:"></asp:Label>
                 <asp:Label ID="lblOrderAtBranch" runat="server" ForeColor="#FF8000"></asp:Label><br />
                 <br />
-              </fieldset>
+            </fieldset>
         </div>
     </div>
 </asp:Content>

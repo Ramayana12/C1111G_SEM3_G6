@@ -51,7 +51,7 @@
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
                                 <asp:LinkButton ID="lbtnRemove" runat="server" ToolTip="Delete Service" CommandArgument='<%# Eval("ID") %>' OnCommand="lbtnRemove_Command" OnClientClick="return confirm('Are you sure you want to delete this record ?')">Remove</asp:LinkButton>&nbsp;
-                        &nbsp;&nbsp;<asp:LinkButton ID="lbtnUpdate" ToolTip="Update Service" runat="server" CommandArgument='<%# Eval("ID") %>' OnCommand="lbtnUpdate_Command">Update Service</asp:LinkButton>
+                        &nbsp;&nbsp;<asp:LinkButton ID="lbtnUpdate" ToolTip="Update Service" runat="server" CommandArgument='<%# Eval("ID") %>' OnCommand="lbtnUpdate_Command">Update</asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
