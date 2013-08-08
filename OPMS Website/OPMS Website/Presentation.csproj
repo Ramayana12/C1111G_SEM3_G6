@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FreeTextBox">
+      <HintPath>..\..\..\..\Java\eProject III\SourceCode\OPMS\Bin\FreeTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -57,6 +60,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About Us.aspx" />
     <Content Include="Admin\AccountChangePassword.aspx" />
     <Content Include="Admin\AccountDetails.aspx" />
     <Content Include="Admin\AccountCreate.aspx" />
@@ -213,6 +217,57 @@
     <Content Include="Admin\WeightCreate.aspx" />
     <Content Include="Admin\WeightManagement.aspx" />
     <Content Include="Admin\WeightUpdate.aspx" />
+    <Content Include="Branches.aspx" />
+    <Content Include="CheckStatus.aspx" />
+    <Content Include="CSS\images\arrow.jpg" />
+    <Content Include="CSS\images\bird.jpeg" />
+    <Content Include="CSS\images\bodybottombg.jpg" />
+    <Content Include="CSS\images\bodytopbg.jpg" />
+    <Content Include="CSS\images\branch.JPG" />
+    <Content Include="CSS\images\button.gif" />
+    <Content Include="CSS\images\dotline.gif" />
+    <Content Include="CSS\images\footerbg.gif" />
+    <Content Include="CSS\images\formarea.jpg" />
+    <Content Include="CSS\images\formtop.gif" />
+    <Content Include="CSS\images\home.jpg" />
+    <Content Include="CSS\images\images.jpeg" />
+    <Content Include="CSS\images\main-bg.gif" />
+    <Content Include="CSS\images\menubg-hover.gif" />
+    <Content Include="CSS\images\menubg-normal.gif" />
+    <Content Include="CSS\images\online.jpg" />
+    <Content Include="CSS\images\post office.jpeg" />
+    <Content Include="CSS\images\sl-4.jpg" />
+    <Content Include="CSS\images\vertical-dot.gif" />
+    <Content Include="CSS\images\welcomebg.gif" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\stylesheets\images\blank.gif" />
+    <Content Include="CSS\stylesheets\images\comment.gif" />
+    <Content Include="CSS\stylesheets\images\content.jpg" />
+    <Content Include="CSS\stylesheets\images\delete.png" />
+    <Content Include="CSS\stylesheets\images\footer.jpg" />
+    <Content Include="CSS\stylesheets\images\form_bg_TextArea.jpg" />
+    <Content Include="CSS\stylesheets\images\go.gif" />
+    <Content Include="CSS\stylesheets\images\header.jpg" />
+    <Content Include="CSS\stylesheets\images\headerbg.gif" />
+    <Content Include="CSS\stylesheets\images\HeaderChrome.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderChromeBlack.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderGamer.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderGamer_Hover.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderGamer_left.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderGlassBlack.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderSoftGrey.jpg" />
+    <Content Include="CSS\stylesheets\images\HeaderWhiteChrome.jpg" />
+    <Content Include="CSS\stylesheets\images\loading.gif" />
+    <Content Include="CSS\stylesheets\images\menu-bg.gif" />
+    <Content Include="CSS\stylesheets\images\menu.jpg" />
+    <Content Include="CSS\stylesheets\images\page.gif" />
+    <Content Include="CSS\stylesheets\images\PagerGamer.jpg" />
+    <Content Include="CSS\stylesheets\images\search.png" />
+    <Content Include="CSS\stylesheets\images\square-green.png" />
+    <Content Include="CSS\stylesheets\images\update.png" />
+    <Content Include="CSS\stylesheets\images\YahooSprite.gif" />
+    <Content Include="CSS\stylesheets\interface.css" />
+    <Content Include="CSS\stylesheets\WhiteChromeGridView.css" />
     <Content Include="Employee\EmployeeChangePassword.aspx" />
     <Content Include="Employee\OrderCreate.aspx" />
     <Content Include="Employee\EmployeeUpdateProfile.aspx" />
@@ -221,9 +276,20 @@
     <Content Include="Employee\OrderManagement.aspx" />
     <Content Include="Employee\OrderUpdate.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Newss.aspx" />
+    <Content Include="Services.aspx" />
+    <Content Include="Support.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About Us.aspx.cs">
+      <DependentUpon>About Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About Us.aspx.designer.cs">
+      <DependentUpon>About Us.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AccountChangePassword.aspx.cs">
       <DependentUpon>AccountChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +465,20 @@
     <Compile Include="Admin\WeightUpdate.aspx.designer.cs">
       <DependentUpon>WeightUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Branches.aspx.cs">
+      <DependentUpon>Branches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Branches.aspx.designer.cs">
+      <DependentUpon>Branches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckStatus.aspx.cs">
+      <DependentUpon>CheckStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckStatus.aspx.designer.cs">
+      <DependentUpon>CheckStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee\EmployeeChangePassword.aspx.cs">
       <DependentUpon>EmployeeChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,7 +538,42 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageHome.Master.cs">
+      <DependentUpon>MasterPageHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageHome.Master.designer.cs">
+      <DependentUpon>MasterPageHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Newss.aspx.cs">
+      <DependentUpon>Newss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Newss.aspx.designer.cs">
+      <DependentUpon>Newss.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.aspx.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services.aspx.designer.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Support.aspx.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Support.aspx.designer.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\css\CSS\images\Thumbs.db" />
@@ -467,6 +582,10 @@
     <Content Include="Admin\img\Thumbs.db" />
     <Content Include="Admin\masterPageAdmin.Master" />
     <Content Include="Employee\masterPageEmployee.Master" />
+    <Content Include="MasterPageHome.Master" />
+    <Content Include="CSS\images\Thumbs.db" />
+    <Content Include="CSS\stylesheets\images\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\QuanDN.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -484,7 +603,9 @@
       <Name>DataTransferObject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

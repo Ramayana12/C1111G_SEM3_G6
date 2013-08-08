@@ -1,0 +1,103 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageHome.master.cs" Inherits="OPMS_Website.MasterPageHome" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<title>TARS Post Office Website</title>
+<head id="Head1" runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="CSS/stylesheets/WhiteChromeGridView.css" type="text/css" />
+    <link rel="stylesheet" href="CSS/stylesheets/interface.css" type="text/css" />
+</head>
+
+<body>
+    <!-- wrap starts here -->
+    <div id="wrap">
+        <form id="form1" runat="server">
+            <!--header -->
+            <div id="header">
+                <h1 id="logo-text" style="left: 50px; top: 28px">
+                    <span style="color: #ffcc00; font-size: 1em;">
+                        <em>TARS</em></span> <span style="color: buttonface; font-size: 1em;"><em>Postal Service</em></span>
+                </h1>
+                <h2 id="slogan" style="left: 76px; top: 76px; width: 153px;">
+                    <span style="color: #ffff33">
+                        <strong>Connecting People</strong></span>
+                </h2>
+            </div>
+            <!-- menu -->
+            <div id="menu">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- content-wrap starts here -->
+            <div id="content-wrap">
+                <div id="sidebar" style="width: 24%;">
+                    <h1>Services Catelogies</h1>
+                    <div class="left-box">
+                        <ul class="sidemenu" style="text-align: left">
+                            <asp:DataList ID="dtlService" runat="server" Width="177px" Height="88px">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:HyperLink ID="ServicesLink"
+                                            runat="server" NavigateUrl='<%# "~/Services.aspx?ID=" + Eval("ID") %>'
+                                            Text='<%# Eval("Name") %>'></asp:HyperLink>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </ul>
+                    </div>
+                    <h1>Check status of Delivery</h1>
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<br />
+                    &nbsp; &nbsp; 
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="1.2em" ForeColor="#FF6600" Text="Enter PIN Code" Width="113px"></asp:Label><p>
+                        &nbsp;<asp:TextBox ID="txtSearchStatus" runat="server" Height="17px" Width="79px"></asp:TextBox>
+                        <asp:Button ID="btnSearchStatus" runat="server" Text="Search" OnClick="btnSearchStatus_Click" ToolTip="Search the status of the Delivery" />
+                    </p>
+                    &nbsp; &nbsp;<%--Example: MC1020--%>
+                    <h1>The latest News</h1>
+                    <ul class="sidemenu" style="text-align: left">
+                        <asp:DataList ID="dtlNews" runat="server" Width="175px" Height="88px" Font-Size="9pt">
+                            <ItemTemplate>
+                                <li>
+                                    <asp:HyperLink ID="ServicesLink"
+                                        runat="server" NavigateUrl='<%# "~/Newss.aspx?ID=" + Eval("ID") %>'
+                                        Text='<%# Eval("Title") %>' Font-Size="0.8em"></asp:HyperLink>
+                                </li>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </ul>
+                </div>
+                <div id="main" style="width: 75%">
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <p>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </p>
+                    <p class="post-footer align-right">
+                    </p>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <!-- content-wrap ends here -->
+            <!--footer starts here-->
+            <div id="footer">
+                <p>
+                    &copy; 2013 <strong>TARS Post Office</strong> | Design by: KCSoft &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                  <a href="Home.aspx">Home</a>
+                    | <a href="Branches.aspx">Branch</a>
+                    | <a href="Support.aspx">Support</a>
+                    | <a href="About Us.aspx">About Us</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- wrap ends here -->
+</body>
+</html>

@@ -33,10 +33,10 @@ namespace DataTransferObject
         {
             FeedBack obj = new FeedBack();
             obj.ID = (dr["ID"] is DBNull) ? string.Empty : dr["ID"].ToString();
-            obj.FullName = (dr["Name"] is DBNull) ? string.Empty : dr["Name"].ToString();
+            obj.FullName = (dr["FullName"] is DBNull) ? string.Empty : dr["FullName"].ToString();
             obj.Email = (dr["Email"] is DBNull) ? string.Empty : dr["Email"].ToString();
-            obj.Content = (dr["Phone"] is DBNull) ? string.Empty : dr["Phone"].ToString();
-            obj.CreateDate = (dr["Address"] is DBNull) ? string.Empty : dr["Address"].ToString();
+            obj.Content = (dr["Content"] is DBNull) ? string.Empty : dr["Content"].ToString();
+            obj.CreateDate = (dr["CreateDate"] is DBNull) ? string.Empty : dr["CreateDate"].ToString();
             return obj;
         }
         #endregion

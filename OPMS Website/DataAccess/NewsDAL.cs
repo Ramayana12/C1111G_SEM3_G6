@@ -35,6 +35,7 @@ namespace DataAccess
                 AddParameter(cmd, "@Title", news.Title);
                 AddParameter(cmd, "@Subject", news.Subject);
                 AddParameter(cmd, "@Content", news.Content);
+                AddParameter(cmd, "@Active", news.Active);
 
                 int result = ExeNonQuery(cmd);
                 return result > 0;
@@ -84,6 +85,30 @@ namespace DataAccess
             using (SqlCommand cmd = GetCommand("getNewsByID", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@ID", Convert.ToInt32(id));
+                News news = new News();
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            list.Add(news.NewsIDatareader(dr));
+                        }
+                    }
+                }
+                news = null;
+            }
+            return list;
+        }
+        #endregion
+
+        #region Search News by Title
+        public List<News> SearchNewsByTitle(string title)
+        {
+            List<News> list = new List<News>();
+            using (SqlCommand cmd = GetCommand("SearchNewsByTitle", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@Title", title);
                 News news = new News();
                 using (SqlDataReader dr = ExeDataReader(cmd))
                 {

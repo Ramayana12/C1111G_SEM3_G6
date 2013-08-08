@@ -507,6 +507,13 @@ AS
 	WHERE ID = @ID
 GO
 
+CREATE PROCEDURE SearchNewsByTitle
+@Title NVarchar(500)
+AS
+	SELECT * FROM News
+	WHERE Title LIKE ('%'+@Title+'%')
+GO
+
 									--- **** _____ FeedBack _____ **** ---
 
 CREATE PROCEDURE insertFeedBack
@@ -550,6 +557,13 @@ AS
 	WHERE ID = @ID
 GO
 
+CREATE PROCEDURE searchFeedBackByName
+@FullName NVarchar(50)
+AS
+	SELECT * FROM FeedBack
+	WHERE FullName LIKE ('%'+@FullName+'%')
+GO
+
 -------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO Branch VALUES('Ha Noi','HN@abc.com','0123456789','Ha noi','Viet Nam capital'),
@@ -559,7 +573,7 @@ INSERT INTO Branch VALUES('Ha Noi','HN@abc.com','0123456789','Ha noi','Viet Nam 
 						('Nha Trang','NT@abc.com','0852369741','Hai phong',''),
 						('TP HCM','HCM@abc.com','0147852369','Sai Gon','big city')
 
-EXECUTE insertAccount '1', 'Admin', 'e10adc3949ba59abbe56e057f20f883e', 'Administrator', 'Super Admin', 'sa@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', 'Default Admin';
+EXECUTE insertAccount 1, 'Admin', 'e10adc3949ba59abbe56e057f20f883e', 'Administrator', 'Super Admin', 'sa@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', 'Default Admin';
 
 EXECUTE insertAccount 1, 'Employee', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Staff', 'sf@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
 EXECUTE insertAccount 1, 'QuanDN', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Duong Ngoc Quan', 'Quandn@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
@@ -589,6 +603,22 @@ INSERT INTO WeightCharge VALUES ('Up to 100 gr', 10, ''),
 								 ('Over 500 - 1000 gr', 25, ''),
 								 ('Over 1000 - 2000 gr', 30, ''),
 								 ('Over 2000 gr', 35, '')
+
+INSERT INTO News(Title, [Subject], Content) 
+	VALUES ('2013 Holiday Press Room','DELIVERING the HOLIDAYS, DELIVERING DREAMS',
+	'Nobody delivers the holidays like TARS Delivery System. And we have a track
+	record of more than 230 years to prove it. So, whether at the Post Office or
+	online at opms.com, you can count on us for all your holiday mailing needs.'),
+			('Postal Service Ready for Busiest Mailing Day','More Than 860 Milion
+	Pieces of Mail Expected Today','Today marks the Postal Service s busiest mailing
+	day of the year, with more than 860 milion pieces of mailing entering the system,
+	This represents an increase of more than 40 percent in the average daily volume
+	of 583 milion pieces of mail.'),
+			('Delivering Deeams One Letter at a Time','Postal Service and Disney
+	Make Holiday Wishes Come True','What do the TARS Delivery System, the Muppet and 
+	Santa Claus have in common? Neither rain nor snow nor heat nor gloom of night
+	will keep them from delivering dreams this holiday season.')
+
 GO								 
 
 -------------------------------------------------------------------------------------------------------------------

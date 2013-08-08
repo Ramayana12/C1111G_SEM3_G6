@@ -17,7 +17,7 @@ namespace DataAccess
             using (SqlCommand cmd = GetCommand("insertFeedBack", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@FullName", feedBack.FullName);
-                AddParameter(cmd, "@FullName", feedBack.FullName);
+                AddParameter(cmd, "@Email", feedBack.Email);
                 AddParameter(cmd, "@Content", feedBack.Content);
 
                 int result = ExeNonQuery(cmd);
@@ -33,7 +33,7 @@ namespace DataAccess
             {
                 AddParameter(cmd, "@ID", feedBack.ID);
                 AddParameter(cmd, "@FullName", feedBack.FullName);
-                AddParameter(cmd, "@FullName", feedBack.FullName);
+                AddParameter(cmd, "@Email", feedBack.Email);
                 AddParameter(cmd, "@Content", feedBack.Content);
 
                 int result = ExeNonQuery(cmd);
@@ -81,9 +81,33 @@ namespace DataAccess
         public List<FeedBack> GetFeedBackByID(string id)
         {
             List<FeedBack> list = new List<FeedBack>();
-            using (SqlCommand cmd = GetCommand("getNewsByID", CommandType.StoredProcedure))
+            using (SqlCommand cmd = GetCommand("getFeedBackByID", CommandType.StoredProcedure))
             {
                 AddParameter(cmd, "@ID", Convert.ToInt32(id));
+                FeedBack feedBack = new FeedBack();
+                using (SqlDataReader dr = ExeDataReader(cmd))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            list.Add(feedBack.FeedBackIDatareader(dr));
+                        }
+                    }
+                }
+                feedBack = null;
+            }
+            return list;
+        }
+        #endregion
+
+        #region Search FeedBack by Name
+        public List<FeedBack> SearchFeedBackByName(string name)
+        {
+            List<FeedBack> list = new List<FeedBack>();
+            using (SqlCommand cmd = GetCommand("SearchFeedBackByName", CommandType.StoredProcedure))
+            {
+                AddParameter(cmd, "@FullName", name);
                 FeedBack feedBack = new FeedBack();
                 using (SqlDataReader dr = ExeDataReader(cmd))
                 {

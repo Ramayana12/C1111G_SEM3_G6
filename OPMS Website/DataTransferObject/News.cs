@@ -35,11 +35,11 @@ namespace DataTransferObject
         {
             News obj = new News();
             obj.ID = (dr["ID"] is DBNull) ? string.Empty : dr["ID"].ToString();
-            obj.Title = (dr["Name"] is DBNull) ? string.Empty : dr["Name"].ToString();
-            obj.Subject = (dr["Email"] is DBNull) ? string.Empty : dr["Email"].ToString();
-            obj.Content = (dr["Phone"] is DBNull) ? string.Empty : dr["Phone"].ToString();
-            obj.CreateDate = (dr["Address"] is DBNull) ? string.Empty : dr["Address"].ToString();
-            obj.Active = (dr["Description"] is DBNull) ? string.Empty : dr["Description"].ToString();
+            obj.Title = (dr["Title"] is DBNull) ? string.Empty : dr["Title"].ToString();
+            obj.Subject = (dr["Subject"] is DBNull) ? string.Empty : dr["Subject"].ToString();
+            obj.Content = (dr["Content"] is DBNull) ? string.Empty : dr["Content"].ToString();
+            obj.CreateDate = (dr["CreateDate"] is DBNull) ? string.Empty : dr["CreateDate"].ToString();
+            obj.Active = (dr["Active"] is DBNull) ? string.Empty : dr["Active"].ToString();
             return obj;
         }
         #endregion

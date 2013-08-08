@@ -46,5 +46,12 @@ namespace Business
             return db.GetNewsByID(id);
         }
         #endregion
+
+        #region Search News by Title
+        public static List<News> SearchNewsByTitle(string title)
+        {
+            return db.GetNewsByID(title);
+        }
+        #endregion
     }
 }
