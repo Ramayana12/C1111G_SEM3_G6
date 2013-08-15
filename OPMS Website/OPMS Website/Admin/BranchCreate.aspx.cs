@@ -37,7 +37,8 @@ namespace OPMS_Website.Admin
                 bool result = BranchBLL.InsertBranch(branch);
                 if (result)
                 {
-                    Response.Redirect("BranchManagement.aspx");
+                    lblStatusAddNewBranch.Text = "create new branch Successful!";
+                    Response.AddHeader("REFRESH", "2;URL=BranchManagement.aspx");
                 }
                 else
                 {

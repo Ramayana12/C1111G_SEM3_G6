@@ -56,7 +56,8 @@ namespace OPMS_Website.Admin
                 bool result = BranchBLL.UpdateBranch(_Branch);
                 if (result)
                 {
-                    Response.Redirect("BranchManagement.aspx");
+                    lblStatusUpdate.Text = "Update branch Successful!";
+                    Response.AddHeader("REFRESH", "2;URL=BranchManagement.aspx");
                 }
                 else
                 {

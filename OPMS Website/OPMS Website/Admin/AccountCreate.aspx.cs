@@ -48,7 +48,7 @@ namespace OPMS_Website.Admin
                 if (result)
                 {
                     lblStatusAddNewAccount.Text = "create new Account Successful!";
-                    Response.Redirect("AccountManagement.aspx");
+                    Response.AddHeader("REFRESH", "2;URL=AccountManagement.aspx");
                 }
                 else
                 {

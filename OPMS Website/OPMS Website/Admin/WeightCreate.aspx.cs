@@ -36,7 +36,7 @@ namespace OPMS_Website.Admin
                 if (result)
                 {
                     lblStatusCreate.Text = "Create Weight Charge successful!";
-                    Response.Redirect("WeightManagement.aspx");
+                    Response.AddHeader("REFRESH", "2;URL=WeightManagement.aspx");
                 }
                 else
                 {

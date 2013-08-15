@@ -41,7 +41,7 @@
                                 <ItemTemplate>
                                     <li>
                                         <asp:HyperLink ID="ServicesLink"
-                                            runat="server" NavigateUrl='<%# "~/Services.aspx?ID=" + Eval("ID") %>'
+                                            runat="server" NavigateUrl='<%# "~/Services.aspx?ServiceID=" + Eval("ID") %>'
                                             Text='<%# Eval("Name") %>'></asp:HyperLink>
                                     </li>
                                 </ItemTemplate>
@@ -49,13 +49,13 @@
                         </ul>
                     </div>
                     <h1>Check status of Delivery</h1>
-                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<br />
-                    &nbsp; &nbsp; 
-                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="1.2em" ForeColor="#FF6600" Text="Enter PIN Code" Width="113px"></asp:Label><p>
-                        &nbsp;<asp:TextBox ID="txtSearchStatus" runat="server" Height="17px" Width="79px"></asp:TextBox>
-                        <asp:Button ID="btnSearchStatus" runat="server" Text="Search" OnClick="btnSearchStatus_Click" ToolTip="Search the status of the Delivery" />
-                    </p>
-                    &nbsp; &nbsp;<%--Example: MC1020--%>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#FF6600" Text="Enter order number:" Font-Size="14px"></asp:Label><p>
+                        &nbsp;<asp:TextBox ID="txtSearchStatus" runat="server" Height="17px" Width="75px" BorderColor="#99CCFF"></asp:TextBox>
+                        <asp:Button ID="btnSearchStatus" runat="server" Text="Search" OnClick="btnSearchStatus_Click" ToolTip="Search the status of the Delivery" BorderColor="#99CCFF" />
+                        <br />
+                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+                    </p>               
                     <h1>The latest News</h1>
                     <ul class="sidemenu" style="text-align: left">
                         <asp:DataList ID="dtlNews" runat="server" Width="175px" Height="88px" Font-Size="9pt">

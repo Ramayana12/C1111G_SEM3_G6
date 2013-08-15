@@ -45,6 +45,7 @@
     <Compile Include="DistanceChargeBLL.cs" />
     <Compile Include="FeedBackBLL.cs" />
     <Compile Include="NewsBLL.cs" />
+    <Compile Include="OrderBLL.cs" />
     <Compile Include="ServiceChargeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeightChargeBLL.cs" />

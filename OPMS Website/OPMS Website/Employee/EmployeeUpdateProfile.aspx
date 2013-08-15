@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Employee/masterPageEmployee.Master" AutoEventWireup="true" CodeBehind="EmployeeUpdateProfile.aspx.cs" Inherits="OPMS_Website.Employee.EmployeeUpdateProfile" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Employee/masterPageEmployee.Master" AutoEventWireup="true" CodeBehind="EmployeeUpdateProfile.aspx.cs" Inherits="OPMS_Website.Employee.EmployeeUpdateProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--Phan nay dung cho menu--%>

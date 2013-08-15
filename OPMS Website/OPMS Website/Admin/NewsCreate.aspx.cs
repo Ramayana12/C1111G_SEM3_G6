@@ -34,7 +34,8 @@ namespace OPMS_Website.Admin
                 bool result = NewsBLL.InsertNews(news);
                 if (result)
                 {
-                    Response.Redirect("NewsManagement.aspx");
+                    lblReport.Text = "Create new News Successful!";
+                    Response.AddHeader("REFRESH", "2;URL=NewsManagement.aspx");
                 }
                 else
                 {

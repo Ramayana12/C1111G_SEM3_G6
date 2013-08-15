@@ -30,7 +30,25 @@ namespace OPMS_Website
 
         protected void btnSearchStatus_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (OrderBLL.GetOrderByID(txtSearchStatus.Text) != null)
+                {
+                    Response.Redirect("CheckStatus.aspx?OrderID=" + txtSearchStatus.Text);
+                }
+                else
+                {
+                    lblMessage.Text = "Input order number wrong!";
+                    return;
+                }
+            }
+            catch (Exception)
+            {
 
+                lblMessage.Text = "Input order number wrong!";
+                return;
+            }
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageHome.Master" AutoEventWireup="true" CodeBehind="Support.aspx.cs" Inherits="OPMS_Website.Support" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/MasterPageHome.Master" AutoEventWireup="true" CodeBehind="Support.aspx.cs" Inherits="OPMS_Website.Support" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <ul>
@@ -55,16 +55,18 @@
             <td style="width: 1px"></td>
         </tr>
         <tr>
-            <td valign="top" style="text-align: right">
+            <td valign="top" style="text-align: right; height: 125px;">
                 <asp:Label ID="Label3" runat="server" Text="Content: "></asp:Label></td>
-            <td style="width: 407px">
-                <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine"></asp:TextBox></td>
-            <td style="width: 1px"></td>
+            <td style="width: 407px; height: 125px;">
+                <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Required!" ForeColor="Red" ControlToValidate="txtContent"></asp:RequiredFieldValidator>
+            </td>
+            <td style="width: 1px; height: 125px;"></td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <asp:Label ID="lblReport" runat="server" Text=""></asp:Label></td>
+                <asp:Label ID="lblReport" runat="server" ForeColor="Red"></asp:Label></td>
             <td style="width: 1px"></td>
         </tr>
         <tr>

@@ -44,6 +44,7 @@
     <Compile Include="DistanceCharge.cs" />
     <Compile Include="FeedBack.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="ServiceCharge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeightCharge.cs" />

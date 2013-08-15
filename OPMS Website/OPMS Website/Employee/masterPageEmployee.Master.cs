@@ -11,17 +11,24 @@ namespace OPMS_Website.Employee
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserName"] == null || Session["EmployeeID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                lbtnUserName.Text = Session["UserName"].ToString();
+            }
         }
 
         protected void lbtnLogout_Click(object sender, EventArgs e)
         {
-
+            Session["EmployeeID"] = null;
         }
 
         protected void lbtnHome_Click(object sender, EventArgs e)
         {
-
+            Session["UserName"] = null;
         }
     }
 }

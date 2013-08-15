@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="BranchManagement.aspx.cs" Inherits="OPMS_Website.Admin.BranchManagement" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostBack="true" Language="C#" MasterPageFile="~/Admin/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="BranchManagement.aspx.cs" Inherits="OPMS_Website.Admin.BranchManagement" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--Phan nay dung cho menu--%>

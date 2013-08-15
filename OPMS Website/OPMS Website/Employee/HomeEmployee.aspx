@@ -34,11 +34,9 @@
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label5" runat="server" Text="Order sending :"></asp:Label>
-                <asp:Label ID="lblOrderSending" runat="server" ForeColor="Olive"></asp:Label><br />
+                <asp:Label ID="lblOrderSending" runat="server" ForeColor="Olive"></asp:Label>
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-                <asp:Label ID="Label6" runat="server" Text="Order at Branch:"></asp:Label>
-                <asp:Label ID="lblOrderAtBranch" runat="server" ForeColor="#FF8000"></asp:Label><br />
+                <br />
                 <br />
             </fieldset>
         </div>

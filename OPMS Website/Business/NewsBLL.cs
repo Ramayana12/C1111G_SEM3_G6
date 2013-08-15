@@ -50,7 +50,7 @@ namespace Business
         #region Search News by Title
         public static List<News> SearchNewsByTitle(string title)
         {
-            return db.GetNewsByID(title);
+            return db.SearchNewsByTitle(title);
         }
         #endregion
     }

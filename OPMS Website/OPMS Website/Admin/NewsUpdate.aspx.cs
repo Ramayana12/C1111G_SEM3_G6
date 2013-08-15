@@ -50,7 +50,8 @@ namespace OPMS_Website.Admin
             bool result = NewsBLL.UpdateNews(news);
             if (result)
             {
-                Response.Redirect("NewsManagement.aspx");
+                lblReport.Text = "Update News Successful!";
+                Response.AddHeader("REFRESH", "2;URL=NewsManagement.aspx");
             }
             else
             {

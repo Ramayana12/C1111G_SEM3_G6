@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="AccountCreate.aspx.cs" Inherits="OPMS_Website.Admin.AccountCreate" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Admin/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="AccountCreate.aspx.cs" Inherits="OPMS_Website.Admin.AccountCreate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--Phan nay dung cho menu--%>
@@ -27,26 +27,24 @@
         <h3>Add New Account</h3>
         <div class="form">
             <fieldset id="personal" class="form" style="text-align: left">
-                <legend class="legend" style="width: 85px">EMPLOYEE INFORMATION</legend>&nbsp; &nbsp;
+                <legend class="legend" style="width: 85px">ACCOUNT INFORMATION</legend>&nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <asp:Label ID="Label1" runat="server" Text="Full Name :"></asp:Label>
-                <asp:TextBox ID="txtFullName" runat="server" Width="210px"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="txtFullName" runat="server" Width="210px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFullName"
                     ErrorMessage="Full Name is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
                 <br />
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <asp:Label ID="Label6" runat="server" Text="Branch :"></asp:Label>&nbsp;<asp:DropDownList
+                <asp:Label ID="Label6" runat="server" Text="Branch :"></asp:Label><asp:DropDownList
                     ID="ddlBranches" runat="server" Width="217px">
-                </asp:DropDownList>&nbsp;<br />
+                </asp:DropDownList>
+                <br />
+                &nbsp;<br />
                 &nbsp;
-            </fieldset>
-            &nbsp;<br />
-            <fieldset id="Fieldset1" class="form" style="text-align: left">
-                <legend class="legend" style="width: 85px">ACCOUNT INFORMATION</legend>&nbsp;&nbsp;<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <asp:Label ID="Label4" runat="server" Text="User Name :"></asp:Label>
-                <asp:TextBox ID="txtUserName" runat="server" Width="210px" AutoPostBack="True" OnTextChanged="txtUserName_TextChanged"></asp:TextBox>
+            
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:Label ID="Label4" runat="server" Text="User Name :"></asp:Label>
+                &nbsp;<asp:TextBox ID="txtUserName" runat="server" Width="210px" AutoPostBack="True" OnTextChanged="txtUserName_TextChanged"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtUserName"
                     ErrorMessage="User Name is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
                 <asp:Label ID="lblCheckUserNameExist" runat="server" ForeColor="Red"></asp:Label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -54,8 +52,7 @@
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;&nbsp;
-                <asp:Label ID="Label3" runat="server" Text="Role :"></asp:Label>&nbsp;
-                <asp:DropDownList
+                <asp:Label ID="Label3" runat="server" Text="Role :"></asp:Label>&nbsp;<asp:DropDownList
                     ID="ddlRole" runat="server" Width="217px">
                     <asp:ListItem Text="------Select Role-------" Value=""></asp:ListItem>
                     <asp:ListItem>Employee</asp:ListItem>
@@ -75,7 +72,7 @@
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lblStatusAddNewAccount" runat="server" ForeColor="Red"></asp:Label>
         </div>
         <br />

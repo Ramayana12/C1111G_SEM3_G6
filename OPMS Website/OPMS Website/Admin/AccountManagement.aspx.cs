@@ -47,7 +47,7 @@ namespace OPMS_Website.Admin
             gvAccountsList.DataBind();
 
             lblTotalRecord.Text = gvAccountsList.Rows.Count.ToString();
-        }       
+        }
 
         protected void ddlBranches_SelectedIndexChanged(object sender, EventArgs e)
         {

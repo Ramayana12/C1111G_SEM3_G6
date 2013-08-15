@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Business;
+using DataTransferObject;
 
 namespace OPMS_Website
 {
@@ -11,7 +13,22 @@ namespace OPMS_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["ServiceID"]==null)
+            {
+                Response.Redirect("Home.aspx");
+            }
+            if (!IsPostBack)
+            {
+                LoadData();
+            }
+        }
 
+        private void LoadData()
+        {
+            ServiceCharge service = new ServiceCharge();
+            service = ServiceChargeBLL.GetServiceChargeByID(Request.QueryString["ServiceID"].ToString())[0];
+            lblServiceName.Text = service.Name;
+            ltrDescription.Text = service.Description;
         }
     }
 }

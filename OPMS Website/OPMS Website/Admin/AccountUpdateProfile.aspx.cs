@@ -63,7 +63,7 @@ namespace OPMS_Website.Admin
                 if (result)
                 {
                     lblStatusUpdate.Text = "Update Successfull!";
-                    Response.Redirect("AccountManagement.aspx");
+                    Response.AddHeader("REFRESH", "2;URL=AccountManagement.aspx");
                 }
                 else
                 {

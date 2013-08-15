@@ -319,8 +319,6 @@ form#form select {
 	margin-left:5px;
 }
 form#form textarea {
-	width:410px;
-	height:200px;
 	padding:5px;
 	overflow:auto;
 }

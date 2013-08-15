@@ -31,7 +31,8 @@ namespace OPMS_Website
                 bool result = FeedBackBLL.InsertFeedBack(feedBack);
                 if (result)
                 {
-                    Response.Redirect("Home.aspx");
+                    lblReport.Text = "Send feedback Successful!";
+                    Response.AddHeader("REFRESH", "2;URL=Support.aspx");
                 }
                 else
                 {

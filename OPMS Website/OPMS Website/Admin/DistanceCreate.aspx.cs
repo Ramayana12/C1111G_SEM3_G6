@@ -36,7 +36,7 @@ namespace OPMS_Website.Admin
                 if (result)
                 {
                     lblStatusCreate.Text = "Create Distance Charge successful!";
-                    Response.Redirect("DistanceManagement.aspx");
+                    Response.AddHeader("REFRESH", "2;URL=DistanceManagement.aspx");
                 }
                 else
                 {

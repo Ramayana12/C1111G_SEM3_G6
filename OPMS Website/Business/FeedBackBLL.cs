@@ -50,7 +50,7 @@ namespace Business
         #region Search FeedBack by Name
         public static List<FeedBack> SearchFeedBackByName(string name)
         {
-            return db.GetFeedBackByID(name);
+            return db.SearchFeedBackByName(name);
         }
         #endregion
     }

@@ -44,6 +44,7 @@ namespace OPMS_Website.Admin
             else
             {
                 Session["EmployeeID"] = account.ID;
+                Session["UserName"] = account.UserName;
                 Response.Redirect("~/Employee/HomeEmployee.aspx");
             }
         }

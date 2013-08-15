@@ -76,19 +76,20 @@ CREATE TABLE [Order]
 	SenderName Nvarchar(50) NOT NULL,
 	SenderAddress NVarchar(300) NOT NULL,
 	SenderPhone Varchar(15) NOT NULL,
-	EmployeeID int CONSTRAINT fk_Oder_Account1 FOREIGN KEY (EmployeeID) REFERENCES Account(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+	EmployeeID int CONSTRAINT fk_Oder_Account1 FOREIGN KEY (EmployeeID) REFERENCES Account(ID),
 	
 	--RECEIVER
 	ReceiverName Nvarchar(50) NOT NULL,
 	ReceiverAddress NVarchar(300) NOT NULL,
 	ReceiverPhone Varchar(15) NOT NULL,
-	DeleveryEmployeeID int CONSTRAINT fk_Oder_Account2 FOREIGN KEY (DeleveryEmployeeID) REFERENCES Account(ID),
+	DeliveryEmployeeID int CONSTRAINT fk_Oder_Account2 FOREIGN KEY (DeliveryEmployeeID) REFERENCES Account(ID),
 	ReceiveDate datetime,
 	
 	--MAIL
 	ServiceChargeID int CONSTRAINT fk_Order_ServiceCharge FOREIGN KEY (ServiceChargeID) REFERENCES ServiceCharge(ID),
 	DistanceChargeID int CONSTRAINT fk_Order_DistanceCharge FOREIGN KEY (DistanceChargeID) REFERENCES DistanceCharge(ID),
 	WeightChargeID int CONSTRAINT fk_Order_WeightCharge FOREIGN KEY (WeightChargeID) REFERENCES WeightCharge(ID),
+	Total money,
 
 	--STATUS
 	[Status] NVarchar(20) DEFAULT 'Sending' CONSTRAINT ck_Order_Status CHECK ([Status] IN ('Sending', 'Sent', 'Return')),
@@ -311,6 +312,117 @@ AS
 	SELECT * FROM Account
 	WHERE UserName = @UserName AND [Password] = @Password	
 GO
+
+									--- **** _____ Order _____ **** ---
+									
+CREATE PROCEDURE insertOrder
+@SenderName Nvarchar(50),
+@SenderAddress NVarchar(300),
+@SenderPhone Varchar(15),
+@EmployeeID int,	
+@ReceiverName Nvarchar(50),
+@ReceiverAddress NVarchar(300),
+@ReceiverPhone Varchar(15),
+@ServiceChargeID int,
+@DistanceChargeID int,
+@WeightChargeID int,
+@Total money,
+@Note NVarchar(300)
+AS
+	INSERT INTO [Order](SenderName,SenderAddress,SenderPhone,EmployeeID,ReceiverName,ReceiverAddress,ReceiverPhone,ServiceChargeID,DistanceChargeID,WeightChargeID,Total,Note) 
+	VALUES (@SenderName,@SenderAddress,@SenderPhone,@EmployeeID,@ReceiverName,@ReceiverAddress,@ReceiverPhone,@ServiceChargeID,@DistanceChargeID,@WeightChargeID,@Total,@Note)
+GO
+
+CREATE PROCEDURE updateOrder
+@ID int,
+@SenderName Nvarchar(50),
+@SenderAddress NVarchar(300),
+@SenderPhone Varchar(15),
+@EmployeeID int,	
+@ReceiverName Nvarchar(50),
+@ReceiverAddress NVarchar(300),
+@ReceiverPhone Varchar(15),
+@DeliveryEmployeeID int,
+@ReceiveDate datetime,
+@ServiceChargeID int,
+@DistanceChargeID int,
+@WeightChargeID int,
+@Total money,
+@Status NVarchar(20),
+@Note NVarchar(300)
+AS
+	UPDATE [Order] 
+	SET SenderName = @SenderName,
+		SenderAddress = @SenderAddress,
+		SenderPhone = @SenderPhone,
+		EmployeeID = @EmployeeID,	
+		ReceiverName = @ReceiverName,
+		ReceiverAddress = @ReceiverAddress,
+		ReceiverPhone = @ReceiverPhone,
+		DeliveryEmployeeID = @DeliveryEmployeeID,
+		ReceiveDate = @ReceiveDate,
+		ServiceChargeID = @ServiceChargeID,
+		DistanceChargeID = @DistanceChargeID,
+		WeightChargeID = @WeightChargeID,
+		Total = @Total,
+		[Status] = @Status,
+		Note = @Note
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE deleteOrder
+@ID int
+AS
+	DELETE FROM [Order]
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE getAllOrder
+AS
+	SELECT * FROM [Order]
+GO
+
+CREATE PROCEDURE getOrderByID
+@ID int
+AS
+	SELECT * FROM [Order]
+	WHERE ID = @ID
+GO
+
+CREATE PROCEDURE searchOrderByName
+@Name NVarchar(50)
+AS
+	SELECT * FROM [Order]
+	WHERE SenderName LIKE ('%'+@Name+'%') OR ReceiverName LIKE ('%'+@Name+'%')
+GO
+
+CREATE PROCEDURE getOrderByStatus
+@Status NVarchar(20)
+AS
+	SELECT * FROM [Order]
+	WHERE [Status] = @Status
+GO	
+
+CREATE PROCEDURE getOrderByServiceID
+@ServiceChargeID int
+AS
+	SELECT * FROM [Order]
+	WHERE ServiceChargeID = @ServiceChargeID
+GO	
+
+CREATE PROCEDURE getOrderByDistanceID
+@DistanceChargeID int
+AS
+	SELECT * FROM [Order]
+	WHERE DistanceChargeID = @DistanceChargeID
+GO	
+
+CREATE PROCEDURE getOrderByWeightID
+@WeightChargeID int
+AS
+	SELECT * FROM [Order]
+	WHERE WeightChargeID = @WeightChargeID
+GO											
 
 									--- **** _____ ServiceCharge _____ **** ---		
 									
@@ -587,22 +699,22 @@ EXECUTE insertAccount 6, 'AnNV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee',
 
 GO
 
-INSERT INTO ServiceCharge VALUES ('NORMAL MAIL', 15, 'This service usually transfer mail allows the sender of the parcel or letter. This service is offered to customers who do not require in terms of time, with features such Normal Mail is the appropriate choice for customers.'),
-								 ('EXPRESS MAIL', 10, 'This service allows people to send parcels quickly and ensures on-time service will be transported in the shortest possible time, possibly within a day.'),								 
-								 ('VPP', 16, 'This is a service that allows people to send parcels to recipients, and recipients will pay for the cost of parcel post.')							 
+INSERT INTO ServiceCharge VALUES ('NORMAL MAIL', 3, 'This service usually transfer mail allows the sender of the parcel or letter. This service is offered to customers who do not require in terms of time, with features such Normal Mail is the appropriate choice for customers.'),
+								 ('EXPRESS MAIL', 5, 'This service allows people to send parcels quickly and ensures on-time service will be transported in the shortest possible time, possibly within a day.'),								 
+								 ('VPP', 7, 'This is a service that allows people to send parcels to recipients, and recipients will pay for the cost of parcel post.')							 
 
-INSERT INTO DistanceCharge VALUES ('Local', 10, ''),
-								 ('Up to 100 Km', 15, ''),
-								 ('Over 100 - 300 Km', 20, ''),
-								 ('Over 300 - 500 Km', 25, ''),
-								 ('Over 500 Km', 25, '')
+INSERT INTO DistanceCharge VALUES ('Local', 2, ''),
+								 ('Up to 100 Km', 4, ''),
+								 ('Over 100 - 300 Km', 8, ''),
+								 ('Over 300 - 500 Km', 14, ''),
+								 ('Over 500 Km', 22, '')
 
-INSERT INTO WeightCharge VALUES ('Up to 100 gr', 10, ''),
-								 ('Over 100 - 300 gr', 15, ''),
-								 ('Over 300 - 500 gr', 20, ''),
-								 ('Over 500 - 1000 gr', 25, ''),
-								 ('Over 1000 - 2000 gr', 30, ''),
-								 ('Over 2000 gr', 35, '')
+INSERT INTO WeightCharge VALUES ('Up to 100 gr', 1, ''),
+								 ('Over 100 - 300 gr', 2, ''),
+								 ('Over 300 - 500 gr', 4, ''),
+								 ('Over 500 - 1000 gr', 7, ''),
+								 ('Over 1000 - 2000 gr', 11, ''),
+								 ('Over 2000 gr', 16, '')
 
 INSERT INTO News(Title, [Subject], Content) 
 	VALUES ('2013 Holiday Press Room','DELIVERING the HOLIDAYS, DELIVERING DREAMS',

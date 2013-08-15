@@ -87,7 +87,7 @@ namespace OPMS_Website.Admin
                 if (result)
                 {
                     lblStatusCreate.Text = "Update Service successful!";
-                    Response.Redirect("ServiceManagement.aspx");
+                    Response.AddHeader("REFRESH", "2;URL=ServiceManagement.aspx");
                 }
                 else
                 {

@@ -24,7 +24,7 @@
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;
                 <asp:Label ID="Label2" runat="server" Text="Old Password:"></asp:Label>
-                <asp:TextBox ID="txtOldPassword" runat="server" TextMode="Password" Width="174px" AutoPostBack="True"></asp:TextBox>
+                <asp:TextBox ID="txtOldPassword" runat="server" TextMode="Password" Width="174px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtOldPassword"
                     ErrorMessage="Old Password is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator>
                 <asp:Label ID="lblCheckOldPassword" runat="server" ForeColor="Red"></asp:Label>
@@ -36,7 +36,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNewPassword"
                     ErrorMessage="New Password is not empty !" ForeColor="Red">(*)</asp:RequiredFieldValidator><br />
                 &nbsp;<br />
-                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
                 <asp:Label ID="Label4" runat="server" Text="Confirm New Password:"></asp:Label>
                 <asp:TextBox ID="txtConfirmNewPassword" runat="server" TextMode="Password" Width="174px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtConfirmNewPassword"

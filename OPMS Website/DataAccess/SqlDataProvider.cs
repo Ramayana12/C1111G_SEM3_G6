@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class SqlDataProvider
     {
-        private string strConnect = ConfigurationManager.ConnectionStrings["SQLConnectiongString"].ConnectionString;
+        private string strConnect = ConfigurationManager.ConnectionStrings["SQLSomee"].ConnectionString;
 
         /// <summary>
         /// Tra ve doi tuong command

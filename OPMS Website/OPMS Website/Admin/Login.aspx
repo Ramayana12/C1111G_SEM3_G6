@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="OPMS_Website.Admin.Login" %>
+﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="OPMS_Website.Admin.Login" %>
 
 <!DOCTYPE html>
 
