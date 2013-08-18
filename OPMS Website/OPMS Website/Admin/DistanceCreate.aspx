@@ -6,7 +6,7 @@
         <ul>
             <li><a href="HomeAdmin.aspx">HOME</a></li>
             <li><a href="BranchManagement.aspx">BRANCHES</a></li>
-            <li><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="AccountManagement.aspx">EMPLOYEE</a></li>
             <li  class="current"><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
             <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>

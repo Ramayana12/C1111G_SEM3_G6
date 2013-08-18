@@ -21,6 +21,8 @@ namespace OPMS_Website.Admin
             {
                 LoadBranches();
                 LoadAccounts();
+
+
             }
         }
 
@@ -39,6 +41,12 @@ namespace OPMS_Website.Admin
             gvAccountsList.DataBind();
 
             lblTotalRecord.Text = gvAccountsList.Rows.Count.ToString();
+            foreach (GridViewRow gvRow in gvAccountsList.Rows)
+            {
+                ((CheckBox)gvRow.FindControl("cbActive")).Attributes.Add("OnClick", "return confirm('Are you sure you want to change Status this account ?')");
+            }
+
+
         }
 
         protected void txtUserName_TextChanged(object sender, EventArgs e)

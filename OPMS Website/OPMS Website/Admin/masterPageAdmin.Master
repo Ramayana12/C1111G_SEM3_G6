@@ -51,8 +51,8 @@
                         <li>
                             <h3><a href="#" class="user">Users</a></h3>
                             <ul>
-                                <li><a href="AccountCreate.aspx" class="useradd">Add user</a></li>
-                                <li><a href="AccountManagement.aspx" class="search">Find user</a></li>
+                                <li><a href="AccountCreate.aspx" class="useradd">Add employee</a></li>
+                                <li><a href="AccountManagement.aspx" class="search">Find employee</a></li>
                             </ul>
                         </li>
                         <li>

@@ -20,6 +20,8 @@ namespace OPMS_Website
             if (!IsPostBack)
             {
                 LoadData();
+                LoadDropdownlist();
+                Calculate();
             }
         }
 
@@ -29,6 +31,39 @@ namespace OPMS_Website
             service = ServiceChargeBLL.GetServiceChargeByID(Request.QueryString["ServiceID"].ToString())[0];
             lblServiceName.Text = service.Name;
             ltrDescription.Text = service.Description;
+        }
+
+        private void LoadDropdownlist()
+        {           
+            ddlDistance.DataSource = DistanceChargeBLL.GetAllDistanceCharge();
+            ddlDistance.DataTextField = "Name";
+            ddlDistance.DataValueField = "ID";
+            ddlDistance.DataBind();
+            ddlDistance.SelectedIndex = 0;
+
+            ddlWeight.DataSource = WeightChargeBLL.GetAllWeightCharge();
+            ddlWeight.DataTextField = "Name";
+            ddlWeight.DataValueField = "ID";
+            ddlWeight.DataBind();
+            ddlWeight.SelectedIndex = 0;
+        }
+
+        private void Calculate()
+        {
+            decimal serviceCharge = Convert.ToDecimal(ServiceChargeBLL.GetServiceChargeByID(Request.QueryString["ServiceID"].ToString())[0].Charge);
+            decimal distanceCharge = Convert.ToDecimal(DistanceChargeBLL.GetDistanceChargeByID(ddlDistance.SelectedValue)[0].Charge);
+            decimal weightCharge = Convert.ToDecimal(WeightChargeBLL.GetWeightChargeByID(ddlWeight.SelectedValue)[0].Charge);
+            txtTotal.Text = (serviceCharge + distanceCharge + weightCharge).ToString("c2");
+        }
+
+        protected void ddlDistance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        protected void ddlWeight_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Calculate();
         }
     }
 }

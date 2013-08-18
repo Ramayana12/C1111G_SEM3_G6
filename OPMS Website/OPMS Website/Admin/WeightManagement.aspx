@@ -6,7 +6,7 @@
         <ul>
             <li><a href="HomeAdmin.aspx">HOME</a></li>
             <li><a href="BranchManagement.aspx">BRANCHES</a></li>
-            <li><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="AccountManagement.aspx">EMPLOYEE</a></li>
             <li class="current"><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
             <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
@@ -50,7 +50,7 @@
                         <asp:BoundField DataField="Description" HeaderText="Description" />
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lbtnRemove" runat="server" ToolTip="Delete Weight charge" CommandArgument='<%# Eval("ID") %>' OnCommand="lbtnRemove_Command" OnClientClick="return confirm('Are you sure you want to delete this record ?')">Remove</asp:LinkButton>&nbsp;
+                               <%-- <asp:LinkButton ID="lbtnRemove" runat="server" ToolTip="Delete Weight charge" CommandArgument='<%# Eval("ID") %>' OnCommand="lbtnRemove_Command" OnClientClick="return confirm('Are you sure you want to delete this record ?')">Remove</asp:LinkButton>&nbsp;--%>
                         &nbsp;&nbsp;<asp:LinkButton ID="lbtnUpdate" ToolTip="Update Weight charge" runat="server" CommandArgument='<%# Eval("ID") %>' OnCommand="lbtnUpdate_Command">Update</asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageHome.Master" AutoEventWireup="true" CodeBehind="Services.aspx.cs" Inherits="OPMS_Website.Services" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/MasterPageHome.Master" AutoEventWireup="true" CodeBehind="Services.aspx.cs" Inherits="OPMS_Website.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <ul>
@@ -29,4 +29,17 @@
     <br />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label20" runat="server" Text="Distance: "></asp:Label>
+                    <asp:DropDownList ID="ddlDistance" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlDistance_SelectedIndexChanged">
+                    </asp:DropDownList><br />
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label21" runat="server" Text="Weight:"></asp:Label>&nbsp;<asp:DropDownList ID="ddlWeight" runat="server" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="ddlWeight_SelectedIndexChanged">
+                </asp:DropDownList>
+                    &nbsp;<br />
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label22" runat="server" Text="Total: "></asp:Label>
+                    &nbsp;<asp:TextBox ID="txtTotal" runat="server" Width="180px" ReadOnly="True"></asp:TextBox>
+                    <br />
 </asp:Content>

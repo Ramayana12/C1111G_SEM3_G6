@@ -585,6 +585,7 @@
     <Content Include="MasterPageHome.Master" />
     <Content Include="CSS\images\Thumbs.db" />
     <Content Include="CSS\stylesheets\images\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
     <None Include="Properties\PublishProfiles\QuanDN.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

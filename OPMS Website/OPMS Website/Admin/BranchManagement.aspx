@@ -6,7 +6,7 @@
         <ul>
             <li><a href="HomeAdmin.aspx">HOME</a></li>
             <li class="current"><a href="BranchManagement.aspx">BRANCHES</a></li>
-            <li><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="AccountManagement.aspx">EMPLOYEE</a></li>
             <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
             <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
@@ -55,9 +55,9 @@
                         <asp:BoundField DataField="Phone" HeaderText="Phone" />
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lbtDelete" runat="server" CommandArgument='<%# Eval("ID") %>'
+                                <%--<asp:LinkButton ID="lbtDelete" runat="server" CommandArgument='<%# Eval("ID") %>'
                                     OnClientClick="return confirm('Are you sure you want to delete this record ?')"
-                                    ToolTip="Delete Branch" CommandName="DeleteBranch" OnCommand="lbtDelete_Command">Remove</asp:LinkButton>&nbsp; &nbsp;
+                                    ToolTip="Delete Branch" CommandName="DeleteBranch" OnCommand="lbtDelete_Command">Remove</asp:LinkButton>--%>&nbsp; &nbsp;
                                 <asp:LinkButton ID="lbtViewDetails" runat="server" CommandArgument='<%# Eval("ID") %>'
                                     ToolTip="View Branch Details" CommandName="ViewDetailsBranch" OnCommand="lbtViewDetails_Command">View Details</asp:LinkButton>&nbsp;
                                 &nbsp;<asp:LinkButton ID="lbtViewEmployees" runat="server" CommandArgument='<%# Eval("ID") %>'

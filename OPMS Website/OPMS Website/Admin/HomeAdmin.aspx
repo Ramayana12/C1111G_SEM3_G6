@@ -6,7 +6,7 @@
         <ul>
             <li class="current"><a href="HomeAdmin.aspx">HOME</a></li>
             <li><a href="BranchManagement.aspx">BRANCHES</a></li>
-            <li><a href="AccountManagement.aspx">USERS</a></li>
+            <li><a href="AccountManagement.aspx">EMPLOYEE</a></li>
             <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
             <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
@@ -31,12 +31,12 @@
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:Label ID="Label3" runat="server"
                         Text="Total Branches:"></asp:Label>
-                <asp:Label ID="lblBranch" runat="server"></asp:Label><br />
+                &nbsp;<asp:Label ID="lblBranch" runat="server"></asp:Label><br />
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Label4" runat="server" Text="Total Account:"></asp:Label>
-                <asp:Label ID="lblAccount" runat="server" ForeColor="Maroon"></asp:Label>
+                &nbsp;<asp:Label ID="lblAccount" runat="server" ForeColor="Maroon"></asp:Label>
                 &nbsp; &nbsp; &nbsp; 
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
                 &nbsp;
@@ -44,12 +44,12 @@
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <asp:Label ID="Label5" runat="server" Text="Total Services:"></asp:Label>
-                <asp:Label ID="lblService" runat="server" ForeColor="Olive"></asp:Label><br />
+                &nbsp;<asp:Label ID="lblService" runat="server" ForeColor="Olive"></asp:Label><br />
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <asp:Label ID="Label6" runat="server" Text="Total Feed back:"></asp:Label>
-                <asp:Label ID="lblFeedBack" runat="server" ForeColor="#FF8000"></asp:Label><br />
+                &nbsp;<asp:Label ID="lblFeedBack" runat="server" ForeColor="#FF8000"></asp:Label><br />
                 <br />
                 <br />
                 <br />

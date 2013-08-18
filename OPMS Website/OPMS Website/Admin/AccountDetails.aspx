@@ -5,7 +5,7 @@
         <ul>
             <li><a href="HomeAdmin.aspx">HOME</a></li>
             <li><a href="BranchManagement.aspx">BRANCHES</a></li>
-            <li class="current"><a href="AccountManagement.aspx">USERS</a></li>
+            <li class="current"><a href="AccountManagement.aspx">EMPLOYEE</a></li>
             <li><a href="ServiceManagement.aspx">MANAGEMENT</a></li>
             <li><a href="NewsManagement.aspx">NEWS</a></li>
         </ul>
@@ -15,8 +15,8 @@
     <%--Phan nay dung cho menu con--%>
     <div id="panel">
         <ul id="ulMenu" runat="server">
-            <li><a href="AccountCreate.aspx" class="useradd">Add user</a></li>
-            <li><a href="AccountManagement.aspx" class="search">Find user</a></li>
+            <li><a href="AccountCreate.aspx" class="useradd">Add employee</a></li>
+            <li><a href="AccountManagement.aspx" class="search">Find employee</a></li>
         </ul>
     </div>
 </asp:Content>

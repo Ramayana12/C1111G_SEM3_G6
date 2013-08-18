@@ -696,6 +696,16 @@ EXECUTE insertAccount 4, 'VietNV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee
 EXECUTE insertAccount 5, 'LinhHT', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Hoang Thuy Linh', 'LinhHT@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
 EXECUTE insertAccount 6, 'Trinh', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Ngoc Trinh', 'Trinh@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
 EXECUTE insertAccount 6, 'AnNV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Nguyen Van An', 'Annv@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 1, 'NghiPQ', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Pham Quang Nghi', 'NghiPQ@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 2, 'DoanNH', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Nguyen Huu Doan', 'DoanNH@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 3, 'DatPT', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Pham Tien Dat', 'DatPT@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 4, 'LuongLV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Le Van Luong', 'LuongLV@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 5, 'ThanhNC', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Nguyen Chi Thanh', 'ThanhNC@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 6, 'QuatCB', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Cao Ba Quat', 'QuatCB@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 1, 'DonLQ', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Le Quy Don', 'DonLQ@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 2, 'NghiLT', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Le Thanh Nghi', 'NghiLT@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 3, 'TungTT', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Ton That Tung', 'TungTT@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
+EXECUTE insertAccount 4, 'ThaiHV', 'e10adc3949ba59abbe56e057f20f883e', 'Employee', 'Hoang Van Thai', 'ThaiHV@abc.com', '', '', '', '~/Admin/imageEmployees/anonymous.png', '';
 
 GO
 
