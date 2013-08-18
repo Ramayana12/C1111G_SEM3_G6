@@ -51,6 +51,11 @@
                 <br />
                 <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="false" AllowPaging="True" AllowSorting="True" PageSize="15" OnPageIndexChanging="gvOrder_PageIndexChanging">
                     <Columns>
+                        <asp:TemplateField HeaderText="Order Number" HeaderStyle-Width="20px">
+                            <ItemTemplate>
+                                <asp:Label ID="lblOrderNumber" Text='<%# Eval("ID") %>' runat="server" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Create date">
                             <ItemTemplate>
                                 <asp:Label runat="server" ID="lblDate" Text='<%# Convert.ToDateTime(Eval("CreateDate")).ToShortDateString() %>' />

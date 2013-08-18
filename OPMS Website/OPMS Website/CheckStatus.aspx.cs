@@ -34,7 +34,7 @@ namespace OPMS_Website
                 lblSendDate.Text = Convert.ToDateTime(order.CreateDate).ToShortDateString();
                 lblSenderName.Text = order.SenderName;
                 lblReceiverName.Text = order.ReceiverName;
-                lblReceivedDate.Text = Convert.ToDateTime(order.ReceiveDate).ToShortDateString();
+                lblReceivedDate.Text = (order.ReceiveDate == "1/1/1900 12:00:00 AM" || order.ReceiveDate == "") ? "" : Convert.ToDateTime(order.ReceiveDate).ToShortDateString();
                 lblService.Text = ServiceChargeBLL.GetServiceChargeByID(order.ServiceChargeID)[0].Name;
                 lblDistance.Text = DistanceChargeBLL.GetDistanceChargeByID(order.DistanceChargeID)[0].Name;
                 lblWeight.Text = WeightChargeBLL.GetWeightChargeByID(order.WeightChargeID)[0].Name;
